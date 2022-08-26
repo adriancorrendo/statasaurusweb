@@ -1,0 +1,38 @@
+project:
+  type: website
+
+website:
+  title: "AdrianCorrendo"
+  image: assets/images/me.png
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: Contact
+    right:
+      - icon: github
+        href: https://github.com/adriancorrendo/
+      - icon: twitter
+        href: https://twitter.com/aacorrendo
+      - icon: browser-safari
+        href: https://correndo1.wixsite.com/main
+  page-footer: 
+    left: "<span> Developed by Adrian Correndo using [Quarto](https://quarto.org/). License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). </span>"
+    background: light
+  twitter-card:
+    creator: "@aacorrendo"
+    site: "@CiampittiLab"
+    
+format:
+  html:
+    theme: yeti
+    css: styles.css
+    toc: true
+    toc-title: ""
+    toc-location: left
+    code-copy: true
+    code-overflow: scroll
+
+editor: visual
+

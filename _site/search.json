@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Digital Ops",
+    "section": "",
+    "text": "This is my Quarto website where I share the latest updates on my digital tools projects.\nLet’s take a look!\n\nShinyapps\n1. soiltestcorr demo app\n\n2. corny0 app\n\n3. metrica demo app\n\n\n\nR-packages\n\n\n\n\n\nHarvard Dataverse Repository\n\n\n\nVideo tutorials\nAgro-meteorological data using R software\n\nRegression Tress and Random Forests"
+  },
+  {
+    "objectID": "index.html#adrian-correndo-phd",
+    "href": "index.html#adrian-correndo-phd",
+    "title": "digitalops",
+    "section": "Adrian Correndo, PhD",
+    "text": "Adrian Correndo, PhD\nWelcome! Here you can check the latest updates on my digital tools projects.\n\nShinyapps\n1. soiltestcorr demo app\n\n2. corny0 app\n\n3. metrica demo app\n\n\n\nR-packages\n1. soiltestcorr: Soil test correlation & calibration in R\n\n2. metrica: Prediction performance metrics in R\n\n3. Xpolaris: an R-package to retrieve United States soil data at 30-meter resolution\n\n\n\nHarvard Dataverse Repository\n\n\n\nVideo tutorials\nAgro-meteorological data using R software\n\nRegression Tress and Random Forests\n\nFor more details see my webpage\n\n\nContact me\ne-maill: correndo@ksu.edu"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "e-maill: correndo@ksu.edu"
+  }
+]
