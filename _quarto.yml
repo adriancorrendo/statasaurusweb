@@ -15,7 +15,9 @@ website:
         href: https://github.com/adriancorrendo/
       - icon: twitter
         href: https://twitter.com/aacorrendo
-      - icon: browser-safari
+      - icon: linkedin
+        href: https://www.linkedin.com/in/adriancorrendo/
+      - icon: globe
         href: https://correndo1.wixsite.com/main
   page-footer: 
     left: "<span> Developed by Adrian Correndo using [Quarto](https://quarto.org/). License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). </span>"
