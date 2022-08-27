@@ -2,23 +2,19 @@
 title: "Digital Ops"
 ---
 
-Welcome! 👋
+Welcome to my Digital Ops section! 👋
 
-This is my Quarto website where I share the latest updates on my digital tools projects.
+Let's take a quick look to the latest updates on my digital tools projects.
 
-Let's take a look!
-
-### R-packages
+## R packages  ![](assets/images/R_logo.png){width="36"}
 
 Open-access software promoting the reproducibility of data processing and analysis
 
 [![](assets/images/soiltestcorr_logo.png){width="100" height="110"}](https://adriancorrendo.github.io/soiltestcorr/) [![](assets/images/metrica_logo.png){width="100" height="110"}](https://adriancorrendo.github.io/metrica/) [![](assets/images/xpolaris.png){width="100" height="110"}](https://github.com/cran/XPolaris)
 
-### Shinyapps
+## Shinyapps  ![](assets/images/shiny.png){width="33"}
 
-### ![](assets/images/shiny.png){width="65"}
-
-Web interfaces that facilitate the implementation of software and translate scientific knowledge into decision-support tools.
+Web interfaces designed to facilitate the implementation of my packages, and to translate my research into decision-support tools.
 
 +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 | #### [soiltestcorr app](https://soiltestcorr.herokuapp.com/)        | #### [metrica app](https://acorrendo.shinyapps.io/shiny_metrica/)                             |
@@ -32,16 +28,18 @@ Web interfaces that facilitate the implementation of software and translate scie
 | ###                                                                 |                                                                                               |
 +---------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
-### [Harvard Dataverse Repository](https://dataverse.harvard.edu/dataverse/adriancorrendo)
+## [Harvard Dataverse](https://dataverse.harvard.edu/dataverse/adriancorrendo) ![](assets/images/harvard_dataverse_logo.png){width="72" height="28"}
 
 Data and codes publicly available
 
 [<img src="assets/images/harvard_dataverse.png" width="300" height="200"/>](https://dataverse.harvard.edu/dataverse/adriancorrendo)
 
-### YouTube tutorials
+## Tutorials - ![](assets/images/YouTube_Logo.png){width="66" height="28"}
 
-A couple of videos explaining the use of several of my tools
+Recordings sharing codes designed for gathering data from digitalized weather databases and data analysis using R
 
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | [Agro-meteorological data using R software](https://www.youtube.com/watch?v=gJo5XUFtDPk) | [Regression Tress and Random Forests](https://www.youtube.com/watch?v=sE8VyX2XGII) |
-|------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
++==========================================================================================+====================================================================================+
 | ![](assets/images/agrometR_tutorial.png){width="300" height="200"}                       | ![](assets/images/rf_tutorial.png){width="300" height="200"}                       |
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+

@@ -22,14 +22,14 @@ website:
         href: https://correndo1.wixsite.com/main
   page-footer: 
     left: "<span> Developed by Adrian Correndo using [Quarto](https://quarto.org/). License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). </span>"
-    background: light
+    background: dark
   twitter-card:
     creator: "@aacorrendo"
     site: "@CiampittiLab"
     
 format:
   html:
-    theme: yeti
+    theme: sandstone
     css: styles.css
     toc: true
     toc-title: ""

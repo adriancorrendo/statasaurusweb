@@ -1,16 +1,86 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Digital Ops",
-    "section": "",
-    "text": "This is my Quarto website where I share the latest updates on my digital tools projects.\nLet’s take a look!\n\nR-packages\nOpen-access software promoting the reproducibility of data processing and analysis\n  \n\n\nShinyapps\n\n\n\nWeb interfaces that facilitate the implementation of software and translate scientific knowledge into decision-support tools.\n\n\n\nsoiltestcorr app\n\nmetrica app\n\n\n\n\n\ncorny0N app\n\n\nsoybean-VRS simulator\n\n\n\n\n\n\nHarvard Dataverse Repository\nData and codes publicly available\n\n\n\nYouTube tutorials\nA couple of videos explaining the use of several of my tools\n\n\n\nAgro-meteorological data using R software\nRegression Tress and Random Forests"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "e-maill: correndo@ksu.edu"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Digital Ops",
+    "section": "",
+    "text": "Welcome to my Digital Ops section! 👋\nLet’s take a quick look to the latest updates on my digital tools projects."
+  },
+  {
+    "objectID": "index.html#r-packages",
+    "href": "index.html#r-packages",
+    "title": "Digital Ops",
+    "section": "R packages ",
+    "text": "R packages \nOpen-access software promoting the reproducibility of data processing and analysis"
+  },
+  {
+    "objectID": "index.html#shinyapps",
+    "href": "index.html#shinyapps",
+    "title": "Digital Ops",
+    "section": "Shinyapps ",
+    "text": "Shinyapps \nWeb interfaces that facilitate the implementation of my packages and translate scientific knowledge into decision-support tools.\n\n\n\nsoiltestcorr app\n\nmetrica app\n\n\n\n\n\ncorny0N app\n\n\nsoybean-VRS simulator"
+  },
+  {
+    "objectID": "index.html#harvard-dataverse-repositories",
+    "href": "index.html#harvard-dataverse-repositories",
+    "title": "Digital Ops",
+    "section": "Harvard Dataverse Repositories",
+    "text": "Harvard Dataverse Repositories\n\nData and codes publicly available"
+  },
+  {
+    "objectID": "index.html#youtube-tutorials",
+    "href": "index.html#youtube-tutorials",
+    "title": "Digital Ops",
+    "section": "YouTube tutorials",
+    "text": "YouTube tutorials\n\nRecordings sharing codes designed for data curations and data analysis\n\n\n\nAgro-meteorological data using R software\nRegression Tress and Random Forests"
+  },
+  {
+    "objectID": "index.html#r-packages--",
+    "href": "index.html#r-packages--",
+    "title": "Digital Ops",
+    "section": "R packages - ",
+    "text": "R packages - \nOpen-access software promoting the reproducibility of data processing and analysis"
+  },
+  {
+    "objectID": "index.html#shinyapps--",
+    "href": "index.html#shinyapps--",
+    "title": "Digital Ops",
+    "section": "Shinyapps - ",
+    "text": "Shinyapps - \nWeb interfaces that facilitate the implementation of my packages and translate scientific knowledge into decision-support tools.\n\n\n\nsoiltestcorr app\n\nmetrica app\n\n\n\n\n\ncorny0N app\n\n\nsoybean-VRS simulator"
+  },
+  {
+    "objectID": "index.html#harvard-dataverse-repositories--",
+    "href": "index.html#harvard-dataverse-repositories--",
+    "title": "Digital Ops",
+    "section": "Harvard Dataverse Repositories - ",
+    "text": "Harvard Dataverse Repositories - \nData and codes publicly available"
+  },
+  {
+    "objectID": "index.html#youtube-tutorials--",
+    "href": "index.html#youtube-tutorials--",
+    "title": "Digital Ops",
+    "section": "YouTube tutorials - ",
+    "text": "YouTube tutorials - \nRecordings sharing codes designed for data curations and data analysis\n\n\n\nAgro-meteorological data using R software\nRegression Tress and Random Forests"
+  },
+  {
+    "objectID": "index.html#harvard-dataverse",
+    "href": "index.html#harvard-dataverse",
+    "title": "Digital Ops",
+    "section": "Harvard Dataverse ",
+    "text": "Harvard Dataverse \nData and codes publicly available"
+  },
+  {
+    "objectID": "index.html#tutorials--",
+    "href": "index.html#tutorials--",
+    "title": "Digital Ops",
+    "section": "Tutorials - ",
+    "text": "Tutorials - \nRecordings sharing codes designed for gathering data from digitalized weather databases and data analysis using R\n\n\n\nAgro-meteorological data using R software\nRegression Tress and Random Forests"
   }
 ]
