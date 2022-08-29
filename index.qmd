@@ -1,5 +1,8 @@
 ---
 title: "Statasaurus's Homepage"
+format:
+  html:
+    fontsize: 1.2em
 ---
 
 Welcome to the Fall 2022 Season of Statasaurus!
@@ -7,7 +10,13 @@ Welcome to the Fall 2022 Season of Statasaurus!
 *Statasaurus* was born in Spring 2019 with the idea of lab mates sharing knowledge about data analysis using R software. By that time, we didn't even know how to create an Rproject file. Over the years, many students have shared their coding and stats knowledge (and doubts) allowing the team to exponentially grow in terms of data analytics skills. Nowadays, we are proudly using these meetings for advanced programming topics.
 
 ::: callout-note
-It is assumed that members are currently managing the basics of data analysis using R.
+It is expected that members have:
+
+i\. the latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/) installed.
+
+ii\. an active [GitHub](https://githu.com) account, and...
+
+iii\. training on the basics of data analysis using R.
 :::
 
 *General Rules*
