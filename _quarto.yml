@@ -42,7 +42,7 @@ website:
       - section: "Code"
         contents:
           - href: code_1_intro.qmd
-            text: "Codes"
+            text: "1_intro"
       - section: "Resources"
         contents:
           - href: resources.qmd
