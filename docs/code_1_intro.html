@@ -165,10 +165,11 @@ ul.task-list{list-style: none;}
   <ul>
   <li><a href="#introduction-to-github-and-quarto" id="toc-introduction-to-github-and-quarto" class="nav-link active" data-scroll-target="#introduction-to-github-and-quarto">Introduction to GitHub and Quarto</a>
   <ul class="collapse">
-  <li><a href="#what-is-github" id="toc-what-is-github" class="nav-link" data-scroll-target="#what-is-github"><img src="images/github-brands-01.svg" width="25" height="25"> What is GitHub?</a></li>
+  <li><a href="#what-is-github" id="toc-what-is-github" class="nav-link" data-scroll-target="#what-is-github"><img src="images/github-brands.svg" width="22" height="22"> What is GitHub?</a></li>
   <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a>
   <ul class="collapse">
   <li><a href="#installing-quarto" id="toc-installing-quarto" class="nav-link" data-scroll-target="#installing-quarto">Installing Quarto</a></li>
+  <li><a href="#todays-exercise" id="toc-todays-exercise" class="nav-link" data-scroll-target="#todays-exercise">Today’s exercise</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -207,7 +208,7 @@ ul.task-list{list-style: none;}
 <li><p>Explore the new features offered by the new development of RStudio: Quarto.</p></li>
 </ol>
 <section id="what-is-github" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-github"><img src="images/github-brands-01.svg" width="25" height="25"> What is GitHub?</h2>
+<h2 class="anchored" data-anchor-id="what-is-github"><img src="images/github-brands.svg" width="22" height="22"> What is GitHub?</h2>
 <p>GitHub is an internet hosting service designed for software development and version control using <a href="https://git-scm.com/">Git</a>. Basically, GitHub facilitates to work in a collaborative manner through multiple features designed to efficiently control changes made by users during a working session.</p>
 <p>Useful desktop applications:</p>
 <ul>
@@ -217,7 +218,7 @@ ul.task-list{list-style: none;}
 <p>Key glossary:</p>
 <table class="table">
 <colgroup>
-<col style="width: 1%">
+<col style="width: 2%">
 <col style="width: 7%">
 <col style="width: 90%">
 </colgroup>
@@ -245,77 +246,82 @@ ul.task-list{list-style: none;}
 <td><em>is a unique set of code changes with a unique name</em>.</td>
 </tr>
 <tr class="even">
+<td>5</td>
+<td><strong>clone</strong></td>
+<td>is to copy a remote repository into your local</td>
+</tr>
+<tr class="odd">
 <td>4</td>
 <td><strong>remote/local</strong></td>
 <td><em>they are Git repositories hosting code at different locations. “Remote” means located on the internet or another network. “Local” means located in your machine.</em></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>5</td>
 <td><strong>origin</strong></td>
 <td><em>is the remote version of a given repository.</em></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>6</td>
 <td><strong>main</strong>/<strong>master</strong></td>
 <td><em>is the name of the default branch. In the past “master” was the default. Since 2020, “main” is the default name of all new source code.</em></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>7</td>
 <td><strong>commit</strong></td>
 <td><em>is a “revision” or individual set of changes to a file or group of files within a branch</em>.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>8</td>
 <td><strong>pull / fetch</strong></td>
 <td><em>is the action to fetch and download content from a remote repository to update your local repository.</em></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>9</td>
 <td><strong>push</strong></td>
 <td><em>is the action to upload content from a local repository to update its remote version (all within a given branch).</em></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>10</td>
 <td><strong>pull request</strong></td>
 <td><p><em>is to let the repository owner to know about changes you’ve made to his code pushing to a new named branch. It allows to discuss, review, accept/reject the changes, and eventually accept and merge your branch to update the old version (normally, the “main” branch).</em></p>
 <p><em>Note: This action allows users to appear into the “contributors” list of a repository.</em></p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>11</td>
 <td><strong>merge</strong></td>
 <td><em>is the action of combining two branches into one, and putting a combined “forked history”.</em></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>12</td>
 <td><strong>rebase</strong></td>
 <td><em>is moving or combining a sequence of commits to a new base commit.</em></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>13</td>
 <td><strong>fast-forward</strong></td>
 <td><em>is merging when there is a direct linear path from the source branch (updating from) to the target branch (the one updating to).</em></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>14</td>
 <td><strong>fork</strong></td>
 <td><em>is to copy other’s repository into your account. Your forked repo will act as an independent branch, so you can commit changes and put pull request from the forked repo.</em></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>15</td>
 <td><strong>Issues</strong></td>
 <td><em>is a section of any GitHub repository that allows to track issues experienced by users. Particularly useful for packages. Issues can be quoted and linked to pull requests.</em></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>16</td>
 <td><strong>PATs</strong></td>
 <td>stands for Persnal Access Tokens, which are an alternative authentication method to passwords and SSH</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>17</td>
 <td><strong>lfs</strong></td>
 <td><em>the lfs stands for Large File Storage. It allows you to track heavy files that are not allowed by default.</em></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>18</td>
 <td><strong>GitHub Actions</strong></td>
 <td>is the way to automate continuos integration and delivery (CI/CD). Particularly, CI is a very important a software practice for package development, since it allows to detect errors on different operative systems via multiple automated tests.</td>
@@ -339,8 +345,33 @@ ul.task-list{list-style: none;}
 <ol type="1">
 <li><a href="https://quarto.org/docs/get-started/">Download Quarto</a> or the <a href="https://www.rstudio.com/products/rstudio/download/">latest version of RStudio</a></li>
 </ol>
+</section>
+<section id="todays-exercise" class="level3">
+<h3 class="anchored" data-anchor-id="todays-exercise">Today’s exercise</h3>
+<p>Today, we will work together on the creation of our own <a href="https://github.com/rstudio/hex-stickers"><strong>hex-sticker</strong></a> using both Quarto and GitHub.</p>
+<section id="steps" class="level4">
+<h4 class="anchored" data-anchor-id="steps">Steps</h4>
+<ol type="1">
+<li><p>Clone a repository:</p>
+<ul>
+<li><p>Open your web-browser and go to <a href="https://github.com/adriancorrendo/Stats_Hub_2022" class="uri">https://github.com/adriancorrendo/Stats_Hub_2022</a></p></li>
+<li><p>Fork to your own GitHub account.</p></li>
+<li><p>Go to your forked repo and click on the “Code” button and copy the https address</p></li>
+</ul>
+<p><img src="images/paste-29986FBE.png" class="img-fluid" width="262"></p></li>
+<li><p>Open Rstudio and go to File &gt; New Project… &gt; version control &gt; Git, and paste the link.</p>
+<p><img src="images/paste-21734184.png" class="img-fluid" width="395"></p></li>
+<li><p>Go to the logo &gt; code and open the <strong>hexsticker_stats_hub.qmd</strong> file.</p></li>
+<li><p>Install the required packages.</p></li>
+<li><p>Modify the logos or create an alternative using the *.qmd file.</p></li>
+<li><p>Create a <strong>commit</strong>. with your changes.</p></li>
+<li><p><strong>Push</strong> (send changes).</p></li>
+<li><p>Contribute with a <strong>Pull Request</strong>.</p></li>
+<li><p>Wait for the PR to be merged into the original repo.</p></li>
+</ol>
 
 
+</section>
 </section>
 </section>
 </section>
