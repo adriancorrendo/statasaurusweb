@@ -3,39 +3,63 @@ project:
   output-dir: docs
 
 website:
-  title: "AdrianCorrendo"
-  image: assets/images/me.png
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - href: about.qmd
-        text: Contact
-    right:
-      - icon: github
-        href: https://github.com/adriancorrendo/
-      - icon: twitter
-        href: https://twitter.com/aacorrendo
-      - icon: linkedin
-        href: https://www.linkedin.com/in/adriancorrendo/
-      - icon: globe
-        href: https://correndo1.wixsite.com/main
+  page-navigation: true
+  title: "Statasaurus - Fall 2022"
+  description: "Homepage for the Statasaurus Team"
+  site-url: "https://adriancorrendo.github.io/statasaurusweb/"
+  repo-url: "https://github.com/adriancorrendo/statasaurusweb/"
+  repo-actions: [edit, issue]
+  
+  open-graph: true
+  twitter-card:
+    creator: "@aacorrendo"
+    
   page-footer: 
     left: "<span> Developed by Adrian Correndo using [Quarto](https://quarto.org/). License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/). </span>"
     background: dark
-  twitter-card:
-    creator: "@aacorrendo"
-    site: "@CiampittiLab"
+  
+      
+  sidebar:
+    logo: "images/statasaurus_logo.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/adriancorrendo/Stats_Hub_2022
+        
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Details"
+        contents: 
+          - href: index.qmd
+            text: "Overview"
+          - href: schedule.qmd
+            text: "Schedule"
+          - href: members.qmd
+            text: "Members"
+      - section: "Code"
+        contents:
+          - href: code_1_intro.qmd
+            text: "Codes"
+      - section: "Resources"
+        contents:
+          - href: resources.qmd
+            text: "Resources"
+   
     
 format:
   html:
-    theme: sandstone
+    theme: cosmo
     css: styles.css
     toc: true
-    toc-title: ""
-    toc-location: left
+    toc-title: "On this section"
+    toc-location: right
     code-copy: true
     code-overflow: scroll
+    
+freeze: auto
 
 editor: visual
 

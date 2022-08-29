@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adrian Correndo">
 
-<title>Statasaurus - Fall 2022 - Statasaurus’s Homepage</title>
+<title>Statasaurus - Fall 2022 - Code #1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./schedule.html" rel="next">
+<link href="./resources.html" rel="next">
+<link href="./members.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -56,11 +58,11 @@ ul.task-list{list-style: none;}
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Statasaurus - Fall 2022 - Statasaurus’s Homepage">
-<meta property="og:description" content="Welcome to the Fall 2022 Season of Statasaurus!">
+<meta property="og:title" content="Statasaurus - Fall 2022 - Code #1">
+<meta property="og:description" content="This contains notes about the introductory meeting, intended to:">
 <meta property="og:site-name" content="Statasaurus - Fall 2022">
-<meta name="twitter:title" content="Statasaurus - Fall 2022 - Statasaurus’s Homepage">
-<meta name="twitter:description" content="Welcome to the Fall 2022 Season of Statasaurus!">
+<meta name="twitter:title" content="Statasaurus - Fall 2022 - Code #1">
+<meta name="twitter:description" content="This contains notes about the introductory meeting, intended to:">
 <meta name="twitter:creator" content="@aacorrendo">
 <meta name="twitter:card" content="summary">
 </head>
@@ -71,7 +73,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Statasaurus’s Homepage</h1>
+      <h1 class="quarto-secondary-nav-title">Code #1</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -99,15 +101,15 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Details</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Details</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Overview</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -124,15 +126,15 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Code</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Code</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./code_1_intro.html" class="sidebar-item-text sidebar-link">Codes</a>
+  <a href="./code_1_intro.html" class="sidebar-item-text sidebar-link active">Codes</a>
   </div>
 </li>
       </ul>
@@ -157,20 +159,39 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this section</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-github-and-quarto" id="toc-introduction-to-github-and-quarto" class="nav-link active" data-scroll-target="#introduction-to-github-and-quarto">Introduction to GitHub and Quarto</a>
+  <ul class="collapse">
+  <li><a href="#what-is-github" id="toc-what-is-github" class="nav-link" data-scroll-target="#what-is-github"><img src="images/github-brands-01.svg" width="25" height="25"> What is GitHub?</a></li>
+  <li><a href="#what-is-quarto" id="toc-what-is-quarto" class="nav-link" data-scroll-target="#what-is-quarto">What is Quarto?</a>
+  <ul class="collapse">
+  <li><a href="#installing-quarto" id="toc-installing-quarto" class="nav-link" data-scroll-target="#installing-quarto">Installing Quarto</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/adriancorrendo/statasaurusweb/edit/main/code_1_intro.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/adriancorrendo/statasaurusweb/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Statasaurus’s Homepage</h1>
+<h1 class="title d-none d-lg-block">Code #1</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Adrian Correndo </p>
+          </div>
+  </div>
     
     
   </div>
@@ -178,39 +199,151 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Welcome to the Fall 2022 Season of Statasaurus!</p>
-<p><em>Statasaurus</em> was born in Spring 2019 with the idea of lab mates sharing knowledge about data analysis using R software. By that time, we didn’t even know how to create an Rproject file. Over the years, many students have shared their coding and stats knowledge (and doubts) allowing the team to exponentially grow in terms of data analytics skills. Nowadays, we are proudly using these meetings for advanced programming topics.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It is assumed that members are currently managing the basics of data analysis using R.</p>
-</div>
-</div>
-<p><em>General Rules</em></p>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The #1 and most important rule is: <em>you ask for a topic, you offer a topic in exchange</em>.</p>
-</div>
-</div>
-<p>The willing to contribute is of central importance cause we all have duties to take care about. Therefore, self-volunteers are crucial and deeply appreciated.</p>
-<p>The meetings are not lectures. The topics agenda, as well as each class are widely open to discussion.</p>
+<section id="introduction-to-github-and-quarto" class="level1">
+<h1>Introduction to GitHub and Quarto</h1>
+<p>This contains notes about the introductory meeting, intended to:</p>
+<ol type="1">
+<li><p>Review on the use of GitHub for collaborative projects.</p></li>
+<li><p>Explore the new features offered by the new development of RStudio: Quarto.</p></li>
+</ol>
+<section id="what-is-github" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-github"><img src="images/github-brands-01.svg" width="25" height="25"> What is GitHub?</h2>
+<p>GitHub is an internet hosting service designed for software development and version control using <a href="https://git-scm.com/">Git</a>. Basically, GitHub facilitates to work in a collaborative manner through multiple features designed to efficiently control changes made by users during a working session.</p>
+<p>Useful desktop applications:</p>
+<ul>
+<li><p><a href="https://desktop.github.com/">GitHub Desktop</a></p></li>
+<li><p><a href="https://www.gitkraken.com/">GitKraken</a></p></li>
+</ul>
+<p>Key glossary:</p>
+<table class="table">
+<colgroup>
+<col style="width: 1%">
+<col style="width: 7%">
+<col style="width: 90%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><strong>version control</strong></td>
+<td><em>is the practice of tracking and managing changes to software code</em></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><strong>repository</strong></td>
+<td><em>is a code hosting platform for version control and collaboration.</em></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><strong>branch</strong></td>
+<td><em>is a unique set of code changes with a unique name</em>.</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><strong>remote/local</strong></td>
+<td><em>they are Git repositories hosting code at different locations. “Remote” means located on the internet or another network. “Local” means located in your machine.</em></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><strong>origin</strong></td>
+<td><em>is the remote version of a given repository.</em></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><strong>main</strong>/<strong>master</strong></td>
+<td><em>is the name of the default branch. In the past “master” was the default. Since 2020, “main” is the default name of all new source code.</em></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><strong>commit</strong></td>
+<td><em>is a “revision” or individual set of changes to a file or group of files within a branch</em>.</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><strong>pull / fetch</strong></td>
+<td><em>is the action to fetch and download content from a remote repository to update your local repository.</em></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><strong>push</strong></td>
+<td><em>is the action to upload content from a local repository to update its remote version (all within a given branch).</em></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td><strong>pull request</strong></td>
+<td><p><em>is to let the repository owner to know about changes you’ve made to his code pushing to a new named branch. It allows to discuss, review, accept/reject the changes, and eventually accept and merge your branch to update the old version (normally, the “main” branch).</em></p>
+<p><em>Note: This action allows users to appear into the “contributors” list of a repository.</em></p></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><strong>merge</strong></td>
+<td><em>is the action of combining two branches into one, and putting a combined “forked history”.</em></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td><strong>rebase</strong></td>
+<td><em>is moving or combining a sequence of commits to a new base commit.</em></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><strong>fast-forward</strong></td>
+<td><em>is merging when there is a direct linear path from the source branch (updating from) to the target branch (the one updating to).</em></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td><strong>fork</strong></td>
+<td><em>is to copy other’s repository into your account. Your forked repo will act as an independent branch, so you can commit changes and put pull request from the forked repo.</em></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><strong>Issues</strong></td>
+<td><em>is a section of any GitHub repository that allows to track issues experienced by users. Particularly useful for packages. Issues can be quoted and linked to pull requests.</em></td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td><strong>PATs</strong></td>
+<td>stands for Persnal Access Tokens, which are an alternative authentication method to passwords and SSH</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><strong>lfs</strong></td>
+<td><em>the lfs stands for Large File Storage. It allows you to track heavy files that are not allowed by default.</em></td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td><strong>GitHub Actions</strong></td>
+<td>is the way to automate continuos integration and delivery (CI/CD). Particularly, CI is a very important a software practice for package development, since it allows to detect errors on different operative systems via multiple automated tests.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-is-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-quarto">What is Quarto?</h2>
+<p>Quarto is an open-source scientific and technical publishing system built on <a href="https://pandoc.org/">Pandoc</a>. It allows to combine R, Python, Julia, and Java (Observable JS) for the design of reports, applications, websites, blogs, scientific publications, and more...</p>
+<p>Key concepts to review:</p>
+<ul>
+<li><p>qmd</p></li>
+<li><p>render</p></li>
+<li><p>yml</p></li>
+<li><p>css</p></li>
+</ul>
+<p>Learn more: <a href="https://quarto.org" class="uri">https://quarto.org</a></p>
+<section id="installing-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="installing-quarto">Installing Quarto</h3>
+<ol type="1">
+<li><a href="https://quarto.org/docs/get-started/">Download Quarto</a> or the <a href="https://www.rstudio.com/products/rstudio/download/">latest version of RStudio</a></li>
+</ol>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -312,10 +445,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./members.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Members</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./schedule.html" class="pagination-link">
-        <span class="nav-page-text">Schedule</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./resources.html" class="pagination-link">
+        <span class="nav-page-text">Resources</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

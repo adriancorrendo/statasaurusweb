@@ -7,80 +7,38 @@
     "text": "e-maill: correndo@ksu.edu"
   },
   {
+    "objectID": "code_1_intro.html",
+    "href": "code_1_intro.html",
+    "title": "Code #1",
+    "section": "",
+    "text": "This contains notes about the introductory meeting, intended to:\n\nReview on the use of GitHub for collaborative projects.\nExplore the new features offered by the new development of RStudio: Quarto.\n\n\n\nGitHub is an internet hosting service designed for software development and version control using Git. Basically, GitHub facilitates to work in a collaborative manner through multiple features designed to efficiently control changes made by users during a working session.\nUseful desktop applications:\n\nGitHub Desktop\nGitKraken\n\nKey glossary:\n\n\n\n\n\n\n\n\n#\nConcept\nDescription\n\n\n\n\n1\nversion control\nis the practice of tracking and managing changes to software code\n\n\n2\nrepository\nis a code hosting platform for version control and collaboration.\n\n\n3\nbranch\nis a unique set of code changes with a unique name.\n\n\n4\nremote/local\nthey are Git repositories hosting code at different locations. “Remote” means located on the internet or another network. “Local” means located in your machine.\n\n\n5\norigin\nis the remote version of a given repository.\n\n\n6\nmain/master\nis the name of the default branch. In the past “master” was the default. Since 2020, “main” is the default name of all new source code.\n\n\n7\ncommit\nis a “revision” or individual set of changes to a file or group of files within a branch.\n\n\n8\npull / fetch\nis the action to fetch and download content from a remote repository to update your local repository.\n\n\n9\npush\nis the action to upload content from a local repository to update its remote version (all within a given branch).\n\n\n10\npull request\nis to let the repository owner to know about changes you’ve made to his code pushing to a new named branch. It allows to discuss, review, accept/reject the changes, and eventually accept and merge your branch to update the old version (normally, the “main” branch).\nNote: This action allows users to appear into the “contributors” list of a repository.\n\n\n11\nmerge\nis the action of combining two branches into one, and putting a combined “forked history”.\n\n\n12\nrebase\nis moving or combining a sequence of commits to a new base commit.\n\n\n13\nfast-forward\nis merging when there is a direct linear path from the source branch (updating from) to the target branch (the one updating to).\n\n\n14\nfork\nis to copy other’s repository into your account. Your forked repo will act as an independent branch, so you can commit changes and put pull request from the forked repo.\n\n\n15\nIssues\nis a section of any GitHub repository that allows to track issues experienced by users. Particularly useful for packages. Issues can be quoted and linked to pull requests.\n\n\n16\nPATs\nstands for Persnal Access Tokens, which are an alternative authentication method to passwords and SSH\n\n\n17\nlfs\nthe lfs stands for Large File Storage. It allows you to track heavy files that are not allowed by default.\n\n\n18\nGitHub Actions\nis the way to automate continuos integration and delivery (CI/CD). Particularly, CI is a very important a software practice for package development, since it allows to detect errors on different operative systems via multiple automated tests.\n\n\n\n\n\n\nQuarto is an open-source scientific and technical publishing system built on Pandoc. It allows to combine R, Python, Julia, and Java (Observable JS) for the design of reports, applications, websites, blogs, scientific publications, and more...\nKey concepts to review:\n\nqmd\nrender\nyml\ncss\n\nLearn more: https://quarto.org\n\n\n\nDownload Quarto or the latest version of RStudio"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Digital Ops",
+    "title": "Statasaurus’s Homepage",
     "section": "",
-    "text": "Welcome to my Digital Ops section! 👋\nLet’s take a quick look to the latest updates on my digital tools projects."
+    "text": "Statasaurus was born in Spring 2019 with the idea of lab mates sharing knowledge about data analysis using R software. By that time, we didn’t even know how to create an Rproject file. Over the years, many students have shared their coding and stats knowledge (and doubts) allowing the team to exponentially grow in terms of data analytics skills. Nowadays, we are proudly using these meetings for advanced programming topics.\n\n\n\n\n\n\nNote\n\n\n\nIt is assumed that members are currently managing the basics of data analysis using R.\n\n\nGeneral Rules\n\n\n\n\n\n\nImportant\n\n\n\nThe #1 and most important rule is: you ask for a topic, you offer a topic in exchange.\n\n\nThe willing to contribute is of central importance cause we all have duties to take care about. Therefore, self-volunteers are crucial and deeply appreciated.\nThe meetings are not lectures. The topics agenda, as well as each class are widely open to discussion."
   },
   {
-    "objectID": "index.html#r-packages",
-    "href": "index.html#r-packages",
-    "title": "Digital Ops",
-    "section": "R packages ",
-    "text": "R packages \nOpen-access software promoting the reproducibility of data processing and analysis"
+    "objectID": "members.html",
+    "href": "members.html",
+    "title": "Members",
+    "section": "",
+    "text": "Member\nGitHub user\n\n\n\n\nAdrian Correndo\nhttps://github.com/adriancorrendo\n\n\nIgnacio Massigoge\nhttps://github.com/imassigoge\n\n\nLuciana Nieto\nhttps://github.com/luciananieto\n\n\nValentina Pereyra\nhttps://github.com/valentinapereyra\n\n\nMario Secchi\nhttps://github.com/mariosecchi\n\n\nJosefina Lacasa\nhttps://github.com/jlacasa\n\n\nLuiz Felipe\nhttps://github.com/luizfelipeaa\n\n\nJuan Rybecky\nhttps://github.com/juanrybecky\n\n\nEmma van Versendaal\nhttps://github.com/emmavanver\n\n\nFrancisco Palmero\nhttps://github.com/fpalmeroo\n\n\nDanilo Tedesco\nhttps://github.com/tedescodanilo\n\n\nNilson Vieira\nhttps://github.com/nvieirajr\n\n\nLucia Marziote\nhttps://github.com/Luciamar\n\n\nCarlos Hernandez\nhttps://github.com/Carlitosh\n\n\nAna Carcedo\nhttps://github.com/anajpcarcedo\n\n\nNicolas Giordano\nhttps://github.com/giordanon\n\n\nLara Zini\nhttps://github.com/larazini\n\n\nGustavo Santiago\nhttps://github.com/GustavoSantiago1103\n\n\nIgnacio Rodriguez\nhttps://github.com/nachorodr\n\n\nPia Rodriguez\nhttps://github.com/piarod1r"
   },
   {
-    "objectID": "index.html#shinyapps",
-    "href": "index.html#shinyapps",
-    "title": "Digital Ops",
-    "section": "Shinyapps ",
-    "text": "Shinyapps \nWeb interfaces that facilitate the implementation of my packages and translate scientific knowledge into decision-support tools.\n\n\n\nsoiltestcorr app\n\nmetrica app\n\n\n\n\n\ncorny0N app\n\n\nsoybean-VRS simulator"
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "This section is intended to serve as a repo where we can share docs, papers, links, tutorials, etc. useful for each topic as well as random content."
   },
   {
-    "objectID": "index.html#harvard-dataverse-repositories",
-    "href": "index.html#harvard-dataverse-repositories",
-    "title": "Digital Ops",
-    "section": "Harvard Dataverse Repositories",
-    "text": "Harvard Dataverse Repositories\n\nData and codes publicly available"
-  },
-  {
-    "objectID": "index.html#youtube-tutorials",
-    "href": "index.html#youtube-tutorials",
-    "title": "Digital Ops",
-    "section": "YouTube tutorials",
-    "text": "YouTube tutorials\n\nRecordings sharing codes designed for data curations and data analysis\n\n\n\nAgro-meteorological data using R software\nRegression Tress and Random Forests"
-  },
-  {
-    "objectID": "index.html#r-packages--",
-    "href": "index.html#r-packages--",
-    "title": "Digital Ops",
-    "section": "R packages - ",
-    "text": "R packages - \nOpen-access software promoting the reproducibility of data processing and analysis"
-  },
-  {
-    "objectID": "index.html#shinyapps--",
-    "href": "index.html#shinyapps--",
-    "title": "Digital Ops",
-    "section": "Shinyapps - ",
-    "text": "Shinyapps - \nWeb interfaces that facilitate the implementation of my packages and translate scientific knowledge into decision-support tools.\n\n\n\nsoiltestcorr app\n\nmetrica app\n\n\n\n\n\ncorny0N app\n\n\nsoybean-VRS simulator"
-  },
-  {
-    "objectID": "index.html#harvard-dataverse-repositories--",
-    "href": "index.html#harvard-dataverse-repositories--",
-    "title": "Digital Ops",
-    "section": "Harvard Dataverse Repositories - ",
-    "text": "Harvard Dataverse Repositories - \nData and codes publicly available"
-  },
-  {
-    "objectID": "index.html#youtube-tutorials--",
-    "href": "index.html#youtube-tutorials--",
-    "title": "Digital Ops",
-    "section": "YouTube tutorials - ",
-    "text": "YouTube tutorials - \nRecordings sharing codes designed for data curations and data analysis\n\n\n\nAgro-meteorological data using R software\nRegression Tress and Random Forests"
-  },
-  {
-    "objectID": "index.html#harvard-dataverse",
-    "href": "index.html#harvard-dataverse",
-    "title": "Digital Ops",
-    "section": "Harvard Dataverse ",
-    "text": "Harvard Dataverse \nData and codes publicly available"
-  },
-  {
-    "objectID": "index.html#tutorials--",
-    "href": "index.html#tutorials--",
-    "title": "Digital Ops",
-    "section": "Tutorials - ",
-    "text": "Tutorials - \nRecordings sharing codes designed for gathering data from digitalized weather databases and data analysis using R\n\n\n\nAgro-meteorological data using R software\nRegression Tress and Random Forests"
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Statasaurus’s Schedule",
+    "section": "",
+    "text": "Fall 2022 - Weekly meeting schedule\n\n\nDate 🗓️ | |\nTopic 🥕 | |\nMembers 🙋🏻\n| | GitHub \n\n\n\n\n29-08-2022\nIntro, GitHub, Quarto\nAdrian Correndo\nhttps://github.com/adriancorrendo/Stats_Hub_2022\n\n\n05-09-2022\nLabor Day\n-\n\n\n\n12-09-2022\nHierarchical Bayesian Models I - Theory & Discussion\nAdrian and Josefina\n\n\n\n19-09-2022\nHierarchical Bayesian Models II - Applied Examples with rjags, stan, brms\nAdrian and Josefina\n\n\n\n26-09-2022\nBEOCAT, Virtual Machines (Azure, Google Cloud, AWS)\nCarlos\n\n\n\n03-10-2022\nShinyapps\nAdrian\n\n\n\n10-10-2022\nRun APSIM in R, apsimx\nAna?\n\n\n\n17-10-2022\nMachine Learning, tidymodels, H2O\nAdrian\n\n\n\n24-10-2022\nSystematic Reviews, Meta-analysis\nIgnacio?\n\n\n\n31-10-2022\nAdvanced gpplot,\nData digitization\nAdrian, Emma, Juan\n\n\n\n07-11-2022\nParallel processing\nNicolas\n\n\n\n14-11-2022\nPrediction Error Metrics\nAdrian, Luciana\n\n\n\n21-11-2022\nThanksgiving\n-\n\n\n\n28-11-2022\nCreating packages?\nAdrian\n\n\n\n05-12-2022\nConclusions & next steps\n-"
   }
 ]

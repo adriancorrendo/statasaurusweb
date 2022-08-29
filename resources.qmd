@@ -1,0 +1,9 @@
+---
+title: "Resources"
+format:
+  html:
+    fontsize: 0.8em
+    linestretch: 1
+---
+
+This section is intended to serve as a repo where we can share docs, papers, links, tutorials, etc. useful for each topic as well as random content.
