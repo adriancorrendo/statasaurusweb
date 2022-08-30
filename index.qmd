@@ -1,5 +1,5 @@
 ---
-title: "Statasaurus's Homepage"
+title: "Statasaurus' Homepage"
 format:
   html:
     fontsize: 1.2em
