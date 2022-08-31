@@ -5,11 +5,13 @@ format:
     fontsize: 1.2em
 ---
 
-Welcome to the Fall 2022 Season of Statasaurus!
+Welcome to the 🍂 Fall 2022 Season 🍂 of Statasaurus!
 
 *History*
 
-*Statasaurus* (a.k.a. Stats-Hub) was born in late Fall 2018 from the idea of several lab mates (Adrian Correndo, Santiago Tamagno, Javier Fernandez, and Luiz Moro Rosso) and their advisor (Dr. Ciampitti) at the KSU Crops team (now [CiampittiLab](https://ciampittilab.wixsite.com/ciampitti-lab)). It was conceived with the main goal sharing knowledge about data analysis using R software. By that time, we were mostly using excel for data wrangling, GraphPad Prism for plots, barely used R script files, no Rmarkdown for reports, and no version control. We didn't even know how to create an \*.Rproj file. Rapidly, the entire team adopted the idea. Over the years, many graduate students, visiting scholars, and postdocs have been sharing their coding and stats knowledge (and doubts) allowing the team to exponentially grow in terms of data analytics skills. Nowadays, we are proudly using these meetings for advanced programming topics. Welcome to the team!
+*Statasaurus* (a.k.a. Stats-Hub) is a series of encounters designed to share, discuss, learn, and used applied stats and computer programming for agricultural research. It was born in late Fall 2018 from the idea of several lab mates (*Adrian Correndo, Santiago Tamagno, Javier Fernande*z, and *Luiz Moro Rosso*) with the support of their advisor (Dr. Ciampitti) at the KSU Crops team (now [CiampittiLab](https://ciampittilab.wixsite.com/ciampitti-lab)).
+
+*Statasaurus* was conceived with the main goal sharing knowledge about data analysis using R software. By that time, we were mostly using excel for data wrangling, GraphPad Prism for plots, barely used R script files, no Rmarkdown for reports, and no version control. We didn't even know how to create an \*.Rproj file. Rapidly, the entire team adopted the idea and the rest is known history. Over the years, many graduate students, visiting scholars, and postdocs have been sharing their coding and stats knowledge (and doubts) allowing the team to exponentially grow in terms of data analytics skills. Nowadays, we are proudly using these meetings exclusively for advanced programming topics. Welcome to the team!
 
 *General Rules*
 
