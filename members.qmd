@@ -30,3 +30,6 @@ format:
 | Gustavo Santiago    | <https://github.com/GustavoSantiago1103> |
 | Ignacio Rodriguez   | <https://github.com/nachorodr>           |
 | Pia Rodriguez       | <https://github.com/piarod1r>            |
+| Thomas Varela       | <https://github.com/thomasvarela>        |
+| Leonardo Bosche     | \-                                       |
+| Agustina Goñi       | \-                                       |
