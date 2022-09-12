@@ -12,7 +12,11 @@ format:
 This article is intended to provide a brief introduction to key concepts about Bayesian theory and differences with the traditional Frequentist approach:
 
 ::: callout-important
+<<<<<<< HEAD
 Neither of both, Frequentist or Bayesian, are always the most suitable solution for your analysis. However....😉
+=======
+Neither of both, Frequentist or Bayesian, are always the most suitable solution for your analysis.
+>>>>>>> d152dcfdfef1bd529bde779e789a5b8cf794947f
 :::
 
 For this reason, today we are going to discuss and compare both approaches.
@@ -20,6 +24,7 @@ For this reason, today we are going to discuss and compare both approaches.
 Let's watch some short videos about it
 
 ## 1. Frequentism vs Bayesianism
+<<<<<<< HEAD
 
 ::: {align="center"}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tsuJM_bHSgA" frameborder="0" allowfullscreen> </iframe>
@@ -34,6 +39,22 @@ What do you think?
 ## 2. Main Differences
 
 Perhaps, the main disagreement between Frequentism and Bayesianism is about the TRUTH.
+=======
+<div align="center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/tsuJM_bHSgA" frameborder="0" allowfullscreen>
+   </iframe>
+</div>
+
+What do you think?
+
+- Open discussion....
+
+----
+
+## 2. Main Differences
+
+Perhaps, the main disagreement between Frequentism and Bayesianism is about the TRUTH. 
+>>>>>>> d152dcfdfef1bd529bde779e789a5b8cf794947f
 
 The Frequentism vision is heavily rooted on the actual existence of the TRUTH. Every time we estimate a model's parameter, we expect to approximate to a true value. It is named "frequentism" because it is based on the frequency of repeated events.
 
@@ -45,6 +66,7 @@ BELIEVES: here is probably the most important point of the Bayesian vision. Baye
 
 Thus, when we analyze our data:
 
+<<<<<<< HEAD
 a.  Frequentism assumes models being fixed and our data random (maximum likelihood).
 
 b.  Bayesianism assumes that models can vary around our data (conditional)
@@ -64,7 +86,30 @@ $$ P(A_{true} | B)  = \frac{P(B|A_{true}) * P(A_{true})}{P(B)}$$ $$ Posterior  =
 ::: {align="center"}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HZGCoVF3YvM" frameborder="0" allowfullscreen> </iframe>
 :::
+=======
+a. Frequentism assumes models being fixed and our data random (maximum likelihood).
+
+b. Bayesianism assumes that models can vary around our data (conditional)
+
+Probably, the structure of the Bayesian theory is more similar to the Science process: (i) we have some data, (ii) we have believes about the underlying process, (iii) combining both, we update our believes.
+
+
+## 3. The Bayes's Theorem
+
+$$ P(A_{true} | B)  = \frac{P(B|A_{true}) * P(A_{true})}{P(B)}$$ 
+$$ Posterior  = \frac{Likelihood * Prior}{Evidence}$$
+### Bayes' Rule Video
+<div align="center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/HZGCoVF3YvM" frameborder="0" allowfullscreen>
+   </iframe>
+</div>
+>>>>>>> d152dcfdfef1bd529bde779e789a5b8cf794947f
 
 ## 4. The Priors
 
 Priors are basically a formalization of our believes in a form of a mathematical function describing a "distribution". First, it depends on the nature of the variable of interest, which could be "discrete" or "continuous". Second, it depends on what we know (or not) about the process of interest...
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d152dcfdfef1bd529bde779e789a5b8cf794947f
