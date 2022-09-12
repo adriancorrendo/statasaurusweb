@@ -43,6 +43,8 @@ website:
         contents:
           - href: code_1_intro.qmd
             text: "1_intro"
+          - href: code_2_bayes_1.qmd
+            text: "2_bayes_1"
       - section: "Resources"
         contents:
           - href: resources.qmd

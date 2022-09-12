@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adrian Correndo &amp; Josefina Lacasa">
 
-<title>Statasaurus - Fall 2022 - Statasaurus’ Homepage</title>
+<title>Statasaurus - Fall 2022 - Code #2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./schedule.html" rel="next">
+<link href="./resources.html" rel="next">
+<link href="./code_1_intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -54,13 +56,14 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Statasaurus - Fall 2022 - Statasaurus’ Homepage">
-<meta property="og:description" content="Welcome to the 🍂 Fall 2022 Season 🍂 of Statasaurus!">
+<meta property="og:title" content="Statasaurus - Fall 2022 - Code #2">
+<meta property="og:description" content="This article is intended to provide a brief introduction to key concepts about Bayesian theory and differences with the traditional Frequentist approach:">
 <meta property="og:site-name" content="Statasaurus - Fall 2022">
-<meta name="twitter:title" content="Statasaurus - Fall 2022 - Statasaurus’ Homepage">
-<meta name="twitter:description" content="Welcome to the 🍂 Fall 2022 Season 🍂 of Statasaurus!">
+<meta name="twitter:title" content="Statasaurus - Fall 2022 - Code #2">
+<meta name="twitter:description" content="This article is intended to provide a brief introduction to key concepts about Bayesian theory and differences with the traditional Frequentist approach:">
 <meta name="twitter:creator" content="@aacorrendo">
 <meta name="twitter:card" content="summary">
 </head>
@@ -71,7 +74,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Statasaurus’ Homepage</h1>
+      <h1 class="quarto-secondary-nav-title">Code #2</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -99,15 +102,15 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Details</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Details</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Overview</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Overview</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -124,12 +127,12 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Code</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Code</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./code_1_intro.html" class="sidebar-item-text sidebar-link">1_intro</a>
@@ -137,7 +140,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./code_2_bayes_1.html" class="sidebar-item-text sidebar-link">2_bayes_1</a>
+  <a href="./code_2_bayes_1.html" class="sidebar-item-text sidebar-link active">2_bayes_1</a>
   </div>
 </li>
       </ul>
@@ -162,20 +165,38 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this section</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-bayesian-stats" id="toc-introduction-to-bayesian-stats" class="nav-link active" data-scroll-target="#introduction-to-bayesian-stats">Introduction to Bayesian Stats</a>
+  <ul class="collapse">
+  <li><a href="#frequentism-vs-bayesianism" id="toc-frequentism-vs-bayesianism" class="nav-link" data-scroll-target="#frequentism-vs-bayesianism">1. Frequentism vs Bayesianism</a></li>
+  <li><a href="#main-differences" id="toc-main-differences" class="nav-link" data-scroll-target="#main-differences">2. Main Differences</a></li>
+  <li><a href="#the-bayess-theorem" id="toc-the-bayess-theorem" class="nav-link" data-scroll-target="#the-bayess-theorem">3. The Bayes’s Theorem</a></li>
+  <li><a href="#the-priors" id="toc-the-priors" class="nav-link" data-scroll-target="#the-priors">4. The Priors</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/adriancorrendo/statasaurusweb/edit/main/code_2_bayes_1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/adriancorrendo/statasaurusweb/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Statasaurus’ Homepage</h1>
+<h1 class="title d-none d-lg-block">Code #2</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Adrian Correndo &amp; Josefina Lacasa </p>
+          </div>
+  </div>
     
     
   </div>
@@ -183,11 +204,9 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Welcome to the 🍂 Fall 2022 Season 🍂 of Statasaurus!</p>
-<p><em>History</em></p>
-<p><em>Statasaurus</em> (a.k.a. Stats-Hub) is a series of encounters designed to share, discuss, learn, and use applied stats and computer programming for agricultural research. It was born in late Fall 2018 from the idea of several lab mates (<em>Adrian Correndo, Santiago Tamagno, Javier Fernande</em>z, and <em>Luiz Moro Rosso</em>) with the support of their advisor (Dr.&nbsp;Ciampitti) at the KSU Crops team (now <a href="https://ciampittilab.wixsite.com/ciampitti-lab">CiampittiLab</a>).</p>
-<p><em>Statasaurus</em> was conceived with the main goal sharing knowledge about data analysis using R software. By that time, we were mostly using excel for data wrangling, GraphPad Prism for plots, barely used R script files, no Rmarkdown for reports, and no version control. We didn’t even know how to create an *.Rproj file. Rapidly, the entire team adopted the idea and the rest is known history. Over the years, many graduate students, visiting scholars, and postdocs have been sharing their coding and stats knowledge (and doubts) allowing the team to exponentially grow in terms of data analytics skills. Nowadays, we are proudly using these meetings exclusively for advanced programming topics. Welcome to the team!</p>
-<p><em>General Rules</em></p>
+<section id="introduction-to-bayesian-stats" class="level1">
+<h1>Introduction to Bayesian Stats</h1>
+<p>This article is intended to provide a brief introduction to key concepts about Bayesian theory and differences with the traditional Frequentist approach:</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -198,23 +217,35 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The #1 and most important rule is: <strong><em>exchange!</em></strong> <em>When you ask for a topic, you also try to offer another topic in exchange</em>.</p>
-<p>The willing to contribute is of central importance cause we all have duties to take care about. Therefore, self-volunteers are crucial and deeply appreciated.</p>
+<p>Neither of both, Frequentist or Bayesian, are always the most suitable solution for your analysis. However….😉</p>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>For this reason, today we are going to discuss and compare both approaches.</p>
+<p>Let’s watch some short videos about it</p>
+<section id="frequentism-vs-bayesianism" class="level2">
+<h2 class="anchored" data-anchor-id="frequentism-vs-bayesianism">1. Frequentism vs Bayesianism</h2>
+<div data-align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tsuJM_bHSgA" frameborder="0" allowfullscreen="">
+</iframe>
 </div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>The meetings are not lectures. Nobody’s bringing the truth! We are all learning, so we foster the discussion among members.</em></p>
-</div>
-</div>
+<p>What do you think?</p>
+<ul>
+<li>Open discussion….</li>
+</ul>
+<hr>
+</section>
+<section id="main-differences" class="level2">
+<h2 class="anchored" data-anchor-id="main-differences">2. Main Differences</h2>
+<p>Perhaps, the main disagreement between Frequentism and Bayesianism is about the TRUTH.</p>
+<p>The Frequentism vision is heavily rooted on the actual existence of the TRUTH. Every time we estimate a model’s parameter, we expect to approximate to a true value. It is named “frequentism” because it is based on the frequency of repeated events.</p>
+<p>The Bayesianism approach instead, DOES NOT assume the existence of the TRUTH. In contrast, it is based on PROBABILITIES &amp; BELIEVES.</p>
+<p>PROBABILITIES: For the Bayesian vision, everything is a matter of probability. Any fact or result about an “estimate” could range from extremely unlikely to extremely likely. However, anything is considered completely true or false.</p>
+<p>BELIEVES: here is probably the most important point of the Bayesian vision. Bayesian models allow to introduce (and update) prior knowledge on a topic, introducing our own certainty or uncertainty about events. EVEN IF WE DON’T KNOW ANYTHING about it (spoiler alter: uninformative prior!).</p>
+<p>Thus, when we analyze our data:</p>
+<ol type="a">
+<li><p>Frequentism assumes models being fixed and our data random (maximum likelihood).</p></li>
+<li><p>Bayesianism assumes that models can vary around our data (conditional)</p></li>
+</ol>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -225,14 +256,27 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It is expected that members have:</p>
-<p>i. the latest version of <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a> installed.</p>
-<p>ii. an active <a href="https://githu.com">GitHub</a> account, and…</p>
-<p>iii. training on the basics of data analysis using R.</p>
+<p>For simple models, however, the two approaches would be practically indistinguishable…</p>
+<p>HINT: think about uninformative prior knowledge!</p>
 </div>
 </div>
+<p>Probably, the structure of the Bayesian theory is more similar to the Science process: (i) we have some data, (ii) we have believes about the underlying process, (iii) combining both, we update our believes.</p>
+</section>
+<section id="the-bayess-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="the-bayess-theorem">3. The Bayes’s Theorem</h2>
+<p><span class="math display">\[ P(A_{true} | B)  = \frac{P(B|A_{true}) * P(A_{true})}{P(B)}\]</span> <span class="math display">\[ Posterior  = \frac{Likelihood * Prior}{Evidence}\]</span> ### Bayes’ Rule Video</p>
+<div data-align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HZGCoVF3YvM" frameborder="0" allowfullscreen="">
+</iframe>
+</div>
+</section>
+<section id="the-priors" class="level2">
+<h2 class="anchored" data-anchor-id="the-priors">4. The Priors</h2>
+<p>Priors are basically a formalization of our believes in a form of a mathematical function describing a “distribution”. First, it depends on the nature of the variable of interest, which could be “discrete” or “continuous”. Second, it depends on what we know (or not) about the process of interest…</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -334,10 +378,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./code_1_intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1_intro</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./schedule.html" class="pagination-link">
-        <span class="nav-page-text">Schedule</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./resources.html" class="pagination-link">
+        <span class="nav-page-text">Resources</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
