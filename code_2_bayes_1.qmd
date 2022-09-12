@@ -1,0 +1,69 @@
+---
+title: "Code #2"
+author: "Adrian Correndo & Josefina Lacasa"
+format:
+  html:
+    fontsize: 0.8em
+    linestretch: 1
+---
+
+# Introduction to Bayesian Stats
+
+This article is intended to provide a brief introduction to key concepts about Bayesian theory and differences with the traditional Frequentist approach:
+
+::: callout-important
+Neither of both, Frequentist or Bayesian, are always the most suitable solution for your analysis.
+:::
+
+For this reason, today we are going to discuss and compare both approaches.
+
+Let's watch some short videos about it
+
+## 1. Frequentism vs Bayesianism
+<div align="center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/tsuJM_bHSgA" frameborder="0" allowfullscreen>
+   </iframe>
+</div>
+
+What do you think?
+
+- Open discussion....
+
+----
+
+## 2. Main Differences
+
+Perhaps, the main disagreement between Frequentism and Bayesianism is about the TRUTH. 
+
+The Frequentism vision is heavily rooted on the actual existence of the TRUTH. Every time we estimate a model's parameter, we expect to approximate to a true value. It is named "frequentism" because it is based on the frequency of repeated events.
+
+The Bayesianism approach instead, DOES NOT assume the existence of the TRUTH. In contrast, it is based on PROBABILITIES & BELIEVES.
+
+PROBABILITIES: For the Bayesian vision, everything is a matter of probability. Any fact or result about an "estimate" could range from extremely unlikely to extremely likely. However, anything is considered completely true or false.
+
+BELIEVES: here is probably the most important point of the Bayesian vision. Bayesian models allow to introduce (and update) prior knowledge on a topic, introducing our own certainty or uncertainty about events. EVEN IF WE DON'T KNOW ANYTHING about it (spoiler alter: uninformative prior!).
+
+Thus, when we analyze our data:
+
+a. Frequentism assumes models being fixed and our data random (maximum likelihood).
+
+b. Bayesianism assumes that models can vary around our data (conditional)
+
+Probably, the structure of the Bayesian theory is more similar to the Science process: (i) we have some data, (ii) we have believes about the underlying process, (iii) combining both, we update our believes.
+
+
+## 3. The Bayes's Theorem
+
+$$ P(A_{true} | B)  = \frac{P(B|A_{true}) * P(A_{true})}{P(B)}$$ 
+$$ Posterior  = \frac{Likelihood * Prior}{Evidence}$$
+### Bayes' Rule Video
+<div align="center">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/HZGCoVF3YvM" frameborder="0" allowfullscreen>
+   </iframe>
+</div>
+
+## 4. The Priors
+
+Priors are basically a formalization of our believes in a form of a mathematical function describing a "distribution". First, it depends on the nature of the variable of interest, which could be "discrete" or "continuous". Second, it depends on what we know (or not) about the process of interest...
+
+
