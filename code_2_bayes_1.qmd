@@ -12,9 +12,7 @@ format:
 This article is intended to provide a brief introduction to key concepts about Bayesian theory and differences with the traditional Frequentist approach:
 
 ::: callout-important
-
 Neither of both, Frequentist or Bayesian, are always the most suitable solution for your analysis. However....😉
-
 :::
 
 For this reason, today we are going to discuss and compare both approaches.
@@ -24,7 +22,9 @@ Let's watch some short videos about it
 ## 1. Frequentism vs Bayesianism
 
 ::: {align="center"}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tsuJM_bHSgA" frameborder="0" allowfullscreen> </iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tsuJM_bHSgA" frameborder="0" allowfullscreen>
+
+</iframe>
 :::
 
 What do you think?
@@ -61,13 +61,16 @@ Probably, the structure of the Bayesian theory is more similar to the Science pr
 
 ## 3. The Bayes's Theorem
 
-$$ P(A_{true} | B)  = \frac{P(B|A_{true}) * P(A_{true})}{P(B)}$$ $$ Posterior  = \frac{Likelihood * Prior}{Evidence}$$ \### Bayes' Rule Video
+$$ P(A_{true} | B)  = \frac{P(B|A_{true}) * P(A_{true})}{P(B)}$$ $$ Posterior  = \frac{Likelihood * Prior}{Evidence}$$
+
+### Bayes' Rule Video 
 
 ::: {align="center"}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HZGCoVF3YvM" frameborder="0" allowfullscreen> </iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HZGCoVF3YvM" frameborder="0" allowfullscreen>
+
+</iframe>
 :::
 
 ## 4. The Priors
 
 Priors are basically a formalization of our believes in a form of a mathematical function describing a "distribution". First, it depends on the nature of the variable of interest, which could be "discrete" or "continuous". Second, it depends on what we know (or not) about the process of interest...
-
