@@ -6,6 +6,9 @@ format:
     fontsize: 0.8em
     linestretch: 1
 ---
+```{r include=FALSE}
+library(latex2exp)
+```
 
 # Introduction to Bayesian Stats
 
@@ -16,9 +19,270 @@ This is a follow-up article from [Bayes#1](https://adriancorrendo.github.io/stat
 
 Computing posterior distributions:
 
-#1. Markov Chain Monte Carlo (MCMC)
+#1. Acceptance/Rejection Sampling
+Basics:  
+1. Generate proposal parameter values
+2. Generate data with those parameters  
+3. Compare the simulated data with the observed data = "difference"
+4. "**Accept**" that combination of parameters if the difference < predifined acceptable error.
+   "**Reject**" if the difference > predifined acceptable error.
+   
+See an example:  
 
-#2. Acceptance/Rejection Sampling
+Using data of yield vesus plant density in corn:  
+```{r, echo=FALSE}
+b0_true <- 5
+b1_true <- 2.2
+b2_true <- .125
+
+x <- seq(3, 12, by = .2)
+mu <- b0_true + x*b1_true - (x^2)*b2_true
+
+set.seed(42)
+y <- mu + rnorm(length(x), 0, sqrt(.05))
+plot(x, y)
+```
+
+$$ y = \beta_0 + x \cdot \beta_1 - x^2 \cdot \beta_2$$
+
+```{r settings, include=FALSE}
+# Algorithm settings
+K_tries <- 10^6  # Number of simulated data sets to make
+diff <- matrix(, K_tries, 1)  # Vector to save the measure of discrepancy between simulated data and real data
+error <- 80  # Allowable difference between simulated data and real data
+
+# Known random variables and parameters
+n <- length(x)
+```
+
+
+```{r prep objects, include=FALSE}
+posterior_samp_parameters <- matrix(, K_tries, 4)  # Matrix to samples of save unknown parameters
+colnames(posterior_samp_parameters) <- c("b0", "b1", "b2", "sigma")
+
+y_hat <- matrix(, K_tries, n)  # Matrix to samples of save unknown number of whooping cranes
+```
+
+```{r demo acc-rej, include=FALSE}
+k = 1
+```
+
+1. Generate proposal parameter values **using the prior ditributions**:  
+
+$$\beta_0 \sim uniform(4, 6)$$
+
+$$\beta_1 \sim uniform(1, 3)$$
+
+$$\beta_2 \sim uniform(0.5, 2)$$
+
+$$\sigma \sim Gamma(2, 2)$$
+
+```{r demo 1}
+set.seed(567)
+b0_try <- runif(1, 4, 6)  # Parameter model
+b1_try <- runif(1, 1, 3)  # Parameter model 
+b2_try <- rgamma(1, .5, 2) # Mathematical equation for process model
+mu_try <- b0_try + x*b1_try - (x^2)*b2_try
+sigma_try <- rgamma(1, 2, 2)
+```
+
+2. Generate data with those parameters  
+```{r demo 1b}
+set.seed(567)
+y_try <- rnorm(n, mu_try, sigma_try)  # Process model
+```
+
+3. Compare the simulated data with the observed data = "difference"
+
+```{r demo 1c}
+# Record difference between draw of y from prior predictive distribution and
+# observed data
+diff[k, ] <- sum(abs(y - y_try))
+```
+
+
+```{r demo 1d, include=FALSE}
+# Save unkown random variables and parameters
+y_hat[k, ] <- y_try
+
+posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
+```
+
+4. "**Accept**" (gold) that combination of parameters if the difference < predifined acceptable error.
+   "**Reject**" (red) if the difference > predifined acceptable error.
+
+```{r demo 1e}
+plot(x, y, xlab = "Plant density", 
+     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
+     typ = "b", cex = 0.8, pch = 20, col = rgb(0.7, 0.7, 0.7, 0.9))
+points(x, y_hat[k,], typ = "b", lwd = 2, 
+       col = ifelse(diff[1] < error, "gold", "tomato"))
+```
+
+```{r demo 1f, echo=FALSE}
+set.seed(66789)
+k = 1
+b0_try <- runif(1, 4, 6)  # Parameter model
+b1_try <- runif(1, 1, 3)  # Parameter model 
+b2_try <- rgamma(1, .5, 2) # Mathematical equation for process model
+mu_try <- b0_try + x*b1_try - (x^2)*b2_try
+sigma_try <- rgamma(1, 2, 2)
+
+y_try <- rnorm(n, mu_try, sigma_try)  # Process model
+
+# Record difference between draw of y from prior predictive distribution and
+# observed data
+diff[k, ] <- sum(abs(y - y_try))
+
+# Save unkown random variables and parameters
+y_hat[k, ] <- y_try
+
+posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
+
+plot(x, y, xlab = "Plant density", 
+     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
+     typ = "b", cex = 0.8, pch = 20, col = rgb(0.7, 0.7, 0.7, 0.9))
+
+points(x, y_hat[k,], typ = "b", lwd = 2, 
+       col = ifelse(diff[1] < error, "gold", "tomato"))
+
+```
+```{r demo 1g, echo=FALSE}
+set.seed(76543)
+k = 1
+b0_try <- runif(1, 4, 6)  # Parameter model
+b1_try <- runif(1, 1, 3)  # Parameter model 
+b2_try <- rgamma(1, .5, 2) # Mathematical equation for process model
+mu_try <- b0_try + x*b1_try - (x^2)*b2_try
+sigma_try <- rgamma(1, 2, 2)
+
+y_try <- rnorm(n, mu_try, sigma_try)  # Process model
+
+# Record difference between draw of y from prior predictive distribution and
+# observed data
+diff[k, ] <- sum(abs(y - y_try))
+
+# Save unkown random variables and parameters
+y_hat[k, ] <- y_try
+
+posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
+
+plot(x, y, xlab = "Plant density", 
+     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
+     typ = "b", cex = 0.8, pch = 20, col = rgb(0.7, 0.7, 0.7, 0.9))
+
+points(x, y_hat[k,], typ = "b", lwd = 2, 
+       col = ifelse(diff[1] < error, "gold", "tomato"))
+
+```
+
+Now, what if whe change the priors:  
+
+```{r echo=FALSE}
+k = 1
+b0_try <- rnorm(1, 5, .01)  # Parameter model
+b1_try <- rnorm(1, 2.2, .01)  # Parameter model 
+b2_try <- rgamma(1, .25, 2) # Mathematical equation for process model
+mu_try <- b0_try + x*b1_try - (x^2)*b2_try
+sigma_try <- rgamma(1, 2, 2)
+
+y_try <- rnorm(n, mu_try, sigma_try)  # Process model
+
+# Record difference between draw of y from prior predictive distribution and
+# observed data
+diff[k, ] <- sum(abs(y - y_try))
+
+# Save unkown random variables and parameters
+y_hat[k, ] <- y_try
+
+posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
+
+plot(x, y, xlab = "Plant density",
+     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
+     typ = "b", cex = 0.8, pch = 20, col = "grey20")
+
+points(x, y_hat[k,], typ = "b",
+       lwd = 2, 
+       col = ifelse(diff[1] < error, "gold", "tomato"))
+```
+
+Now, do many tries  
+
+```{r}
+for (k in 1:K_tries) {
+    
+    b0_try <- runif(1, 2, 10)  # Parameter model
+    b1_try <- rnorm(1, 2.2, .5)  # Parameter model 
+    b2_try <- rgamma(1, .25, 2) # Mathematical equation for process model
+    mu_try <- b0_try + x*b1_try - (x^2)*b2_try
+    sigma_try <- rgamma(1, 2, 2)
+
+    y_try <- rnorm(n, mu_try, sigma_try)  # Process model
+    
+    # Record difference between draw of y from prior predictive distribution and
+    # observed data
+    diff[k, ] <- sum(abs(y - y_try))
+    
+    # Save unkown random variables and parameters
+    y_hat[k, ] <- y_try
+    
+    posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
+}
+```
+
+Acceptance rate
+```{r}
+length(which(diff < error))/K_tries
+```
+
+Priors versus posteriors:
+```{r, echo=FALSE}
+hist(posterior_samp_parameters[which(diff < error), 1], col = "grey", freq = FALSE, 
+    xlim = c(1.5, 10.5), main = "", xlab = TeX("$\\beta_0  | \\y$"), ylab = TeX("$\\lbrack\\beta_0  | \\y\\rbrack$"))
+curve(dunif(x, 2, 10), col = "tomato", lwd = 3, add = TRUE)
+```
+
+
+```{r post 2, echo=FALSE}
+hist(posterior_samp_parameters[which(diff < error), 2], col = "grey", freq = FALSE, 
+    xlim = c(2, 3), main = "", xlab = TeX("$\\beta_1  | \\y$"), 
+    ylab = TeX("$\\lbrack\\beta_1  | \\y\\rbrack$"))
+curve(dnorm(x, 2.2, .5), col = "tomato", lwd = 3, add = TRUE)
+```
+
+```{r post 3, echo=FALSE}
+hist(posterior_samp_parameters[which(diff < error), 3], col = "grey", freq = FALSE, 
+    xlim = c(0, 1), main = "", xlab = TeX("$\\beta_2  | \\y$"), ylab = TeX("$\\lbrack\\beta_2  | \\y\\rbrack$"))
+curve(dgamma(x, .25, 2), col = "tomato", lwd = 3, add = TRUE)
+```
+
+```{r}
+hist(y_hat[which(diff < error), 25], col = "grey", freq = FALSE)
+abline(v = y[25], col = 'gold', lty = "dashed", lwd = 5)
+```
+
+
+```{r final, include=FALSE}
+e.y <- colMeans(y_hat[which(diff < error), ])
+
+lwr.CI <- apply(y_hat[which(diff < error), ], 2, FUN = quantile, prob = c(0.025))
+upper.CI <- apply(y_hat[which(diff < error), ], 2, FUN = quantile, prob = c(0.975))
+```
+
+```{r, echo=FALSE}
+plot(x, y, xlab = "Plant density",
+     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
+     typ = "b", cex = 0.8, pch = 20, col = "grey20")
+
+points(x, e.y, typ = "l", lwd = 2)
+
+polygon(c(x, rev(x)), c(lwr.CI, rev(upper.CI)), col = rgb(0.5, 0.5, 0.5, 0.3), border = NA)
+```
+
+
+#2. Markov Chain Monte Carlo (MCMC)
+More efficient than AR sampling.  
+
 
 Packages for Bayesian analysis in R:
 
