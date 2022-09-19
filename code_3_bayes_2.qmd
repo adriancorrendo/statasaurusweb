@@ -9,6 +9,8 @@ format:
 
 ```{r include=FALSE}
 library(latex2exp)
+library(tidyverse)
+library(brms)
 ```
 
 # Introduction to Bayesian Stats
@@ -54,6 +56,10 @@ mu <- b0_true + x*b1_true - (x^2)*b2_true
 set.seed(42)
 y <- mu + rnorm(length(x), 0, sqrt(.05))
 plot(x, y)
+
+data_frame <- new_tibble(list(x = x, y = y))
+
+
 ```
 
 $$ y = \beta_0 + x \cdot \beta_1 - x^2 \cdot \beta_2$$
@@ -319,6 +325,76 @@ More about brms at <https://www.jstatsoft.org/article/view/v080i01>
 
 ![](images/paste-6C740B97.png){width="336"}
 
+### Fit brms
+
+### brms pars
+
+```{r}
+# Set up pars
+WU = 500
+IT = 3000
+TH = 5
+CH = 4
+AD = 0.99
+```
+
+### Model
+
+```{r}
+
+#| eval: false
+
+x <- seq(3, 12, by = .2)
+mu <- b0_true + x*b1_true - (x^2)*b2_true
+
+set.seed(42)
+y <- mu + rnorm(length(x), 0, sqrt(.05))
+plot(x, y)
+
+# Create df
+data_frame <- new_tibble(list(x = x, y = y))
+
+# 01. Run models
+
+bayes_model <- 
+
+  brms::brm(
+  #Priors
+  prior = c(
+    #Intercept
+    prior(prior = 'normal(5, 5)', nlpar = 'B0', lb = 0),
+    #Slope
+    prior(prior = 'normal(2, 2)', nlpar = 'B1', lb = 0),
+    #Agronomic Optimum
+    prior(prior = 'normal(0.01, 0.5)', nlpar = 'B2', lb = 0) ),
+    # Sigma  
+    #prior(prior = 'gamma(15,1.3)', class = "sigma") ),  
+    # Population prior (median and sd)
+    
+    # Formula
+  formula = bf(y ~  B0 + B1 * x - B2 * (x^2),
+               # Hypothesis
+               B0 + B1 + B2 ~ 1,
+               nl = TRUE), 
+  # Data  
+  data = data_frame, sample_prior = "yes",
+  # Likelihood of the data
+  family = gaussian(link = 'identity'),
+  # brms controls
+  control = list(adapt_delta = AD),
+  warmup = WU, iter = IT, thin = TH,
+  chains = CH, cores = CH,
+  init_r = 0.1, seed = 1) 
+
+# 02. Save object
+saveRDS(object = bayes_model, file = "bayes_model.RDS")
+
+# 03. Visual Diagnostic
+plot(bayes_model)
+
+
+```
+
 ## 4. rstan: R interface to "Stan"
 
 ![](images/stanlogo.png){width="190"}
@@ -335,7 +411,7 @@ We will not fit a model directly with stan today, but *brms* brings a function t
 
 ## 5. rjags: R interface to "Just Another Gibbs Sampler"
 
-![](images/stanlogo.png){width="190"}
+![](images/1601161_JAGS.png){width="318"}
 
 Documentation: <https://mcmc-jags.sourceforge.io/>
 
