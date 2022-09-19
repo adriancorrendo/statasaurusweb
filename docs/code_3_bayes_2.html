@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adrian Correndo &amp; Josefina Lacasa">
 
-<title>Statasaurus - Fall 2022 - Schedule</title>
+<title>Statasaurus - Fall 2022 - Code #2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,8 +25,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./members.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./resources.html" rel="next">
+<link href="./code_2_bayes_1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -57,9 +58,11 @@ ul.task-list{list-style: none;}
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Statasaurus - Fall 2022 - Schedule">
+<meta property="og:title" content="Statasaurus - Fall 2022 - Code #2">
+<meta property="og:description" content="This is a follow-up article from Bayes#1. Still, we do have numerous important concepts in order to understand what the computational codes are doing behind scenes when running a Bayesian analysis.">
 <meta property="og:site-name" content="Statasaurus - Fall 2022">
-<meta name="twitter:title" content="Statasaurus - Fall 2022 - Schedule">
+<meta name="twitter:title" content="Statasaurus - Fall 2022 - Code #2">
+<meta name="twitter:description" content="This is a follow-up article from Bayes#1. Still, we do have numerous important concepts in order to understand what the computational codes are doing behind scenes when running a Bayesian analysis.">
 <meta name="twitter:creator" content="@aacorrendo">
 <meta name="twitter:card" content="summary">
 </head>
@@ -70,7 +73,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Schedule</h1>
+      <h1 class="quarto-secondary-nav-title">Code #2</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -98,12 +101,12 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Details</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">Details</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">Overview</a>
@@ -111,7 +114,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./schedule.html" class="sidebar-item-text sidebar-link active">Schedule</a>
+  <a href="./schedule.html" class="sidebar-item-text sidebar-link">Schedule</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -123,12 +126,12 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Code</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Code</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./code_1_intro.html" class="sidebar-item-text sidebar-link">1_intro</a>
@@ -141,7 +144,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./code_3_bayes_2.html" class="sidebar-item-text sidebar-link">3_bayes_2</a>
+  <a href="./code_3_bayes_2.html" class="sidebar-item-text sidebar-link active">3_bayes_2</a>
   </div>
 </li>
       </ul>
@@ -166,20 +169,35 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this section</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-bayesian-stats" id="toc-introduction-to-bayesian-stats" class="nav-link active" data-scroll-target="#introduction-to-bayesian-stats">Introduction to Bayesian Stats</a>
+  <ul class="collapse">
+  <li><a href="#markov-chain-monte-carlo" id="toc-markov-chain-monte-carlo" class="nav-link" data-scroll-target="#markov-chain-monte-carlo">1. Markov Chain Monte Carlo</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/adriancorrendo/statasaurusweb/edit/main/code_3_bayes_2.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/adriancorrendo/statasaurusweb/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Schedule</h1>
+<h1 class="title d-none d-lg-block">Code #2</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Adrian Correndo &amp; Josefina Lacasa </p>
+          </div>
+  </div>
     
     
   </div>
@@ -187,128 +205,40 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<div class="callout-caution callout callout-style-default callout-captioned">
+<section id="introduction-to-bayesian-stats" class="level1">
+<h1>Introduction to Bayesian Stats</h1>
+<p>This is a follow-up article from <a href="https://adriancorrendo.github.io/statasaurusweb/code_2_bayes_1.html">Bayes#1</a>. Still, we do have numerous important concepts in order to understand what the computational codes are doing behind scenes when running a Bayesian analysis.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Calendar
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Starting the 29-08-2022, the encounters are scheduled for every Monday of the Fall.</p>
-<p>⏲️ 12.00 to 2.00 p.m.</p>
-<p>📍 Room 3021, Throckmorton PSC.</p>
+<p><strong>Today’s Topics</strong>:</p>
+<p>Computing posterior distributions:</p>
+<p>#1. Markov Chain Monte Carlo (MCMC)</p>
+<p>#2. Acceptance/Rejection Sampling</p>
+<p>Packages for Bayesian analysis in R:</p>
+<p>#3. brms</p>
+<p>#4. rstan</p>
+<p>#5. rjags</p>
 </div>
 </div>
-<table class="table">
-<caption>Fall 2022 - Weekly meeting schedule</caption>
-<thead>
-<tr class="header">
-<th>🗓️Date |</th>
-<th>🥕Topic |</th>
-<th>🙋🏻Members</th>
-<th>| GitHub <img src="images/github-brands.svg" width="20" height="20"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>29-08-2022</td>
-<td>Intro, GitHub, Quarto</td>
-<td>Adrian</td>
-<td><a href="https://github.com/adriancorrendo/Stats_Hub_2022" class="uri">https://github.com/adriancorrendo/Stats_Hub_2022</a></td>
-</tr>
-<tr class="even">
-<td>05-09-2022</td>
-<td>Labor Day</td>
-<td>-</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>12-09-2022</td>
-<td>Hierarchical Bayesian Models I - Theory &amp; Discussion</td>
-<td>Adrian and Josefina</td>
-<td><a href="https://adriancorrendo.github.io/statasaurusweb/code_2_bayes_1.html" class="uri">https://adriancorrendo.github.io/statasaurusweb/code_2_bayes_1.html</a></td>
-</tr>
-<tr class="even">
-<td>19-09-2022</td>
-<td>Hierarchical Bayesian Models II - Applied Examples with <em>rjags, rstan</em> <img src="images/stanlogo.png" class="img-fluid" width="25"><em>, brms</em> <img src="images/brms.png" width="22" height="25"></td>
-<td>Adrian and Josefina</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>26-09-2022</td>
-<td>Integration of Spatial Data for predictive models</td>
-<td>Carlos</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>03-10-2022</td>
-<td>Shinyapps <img src="assets/images/shiny.png" class="img-fluid" width="25"></td>
-<td>Adrian</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>10-10-2022</td>
-<td>Run APSIM in R, <em>apsimx</em></td>
-<td>Ana</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>17-10-2022</td>
-<td>Machine Learning, <em>tidymodels</em><img src="images/tidymodels.svg" class="img-fluid" width="23">, <em>H2O</em> <img src="images/h2o-automl-logo.jpg" class="img-fluid" width="23"></td>
-<td>Adrian</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>24-10-2022</td>
-<td><p>Systematic Reviews,</p>
-<p>Meta-analysis protocols</p></td>
-<td>Nicolas</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>31-10-2022</td>
-<td><p>Advanced ggplot <img src="images/logo.png" class="img-fluid" width="33">,</p>
-<p>Data digitization packages (juicr)</p></td>
-<td>Adrian, Emma, Juan</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>07-11-2022</td>
-<td>ASA Meetings’ Week</td>
-<td>-</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>14-11-2022</td>
-<td>Prediction Error Metrics, <em>metrica</em> <img src="images/FXERIykUsAEe7rQ.png" width="22" height="25"></td>
-<td>Adrian, Luciana</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>21-11-2022</td>
-<td>Thanksgiving</td>
-<td>-</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>28-11-2022</td>
-<td>Creating a package, devtools <img src="images/index.png" class="img-fluid" width="25">, roxygen2</td>
-<td>Adrian</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>05-12-2022</td>
-<td>Conclusions &amp; next steps</td>
-<td>-</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>Let’s get started</p>
+<section id="markov-chain-monte-carlo" class="level2">
+<h2 class="anchored" data-anchor-id="markov-chain-monte-carlo">1. Markov Chain Monte Carlo</h2>
+<div data-align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qqz5AJjyugM" frameborder="0" allowfullscreen="">
+</iframe>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -410,13 +340,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      <a href="./code_2_bayes_1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2_bayes_1</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./members.html" class="pagination-link">
-        <span class="nav-page-text">Members</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./resources.html" class="pagination-link">
+        <span class="nav-page-text">Resources</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

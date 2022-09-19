@@ -1,0 +1,40 @@
+---
+title: "Code #2"
+author: "Adrian Correndo & Josefina Lacasa"
+format:
+  html:
+    fontsize: 0.8em
+    linestretch: 1
+---
+
+# Introduction to Bayesian Stats
+
+This is a follow-up article from [Bayes#1](https://adriancorrendo.github.io/statasaurusweb/code_2_bayes_1.html). Still, we do have numerous important concepts in order to understand what the computational codes are doing behind scenes when running a Bayesian analysis.
+
+::: callout-important
+**Today's Topics**:
+
+Computing posterior distributions:
+
+#1. Markov Chain Monte Carlo (MCMC)
+
+#2. Acceptance/Rejection Sampling
+
+Packages for Bayesian analysis in R:
+
+#3. brms
+
+#4. rstan
+
+#5. rjags
+:::
+
+Let's get started
+
+## 1. Markov Chain Monte Carlo
+
+::: {align="center"}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qqz5AJjyugM" frameborder="0" allowfullscreen>
+
+</iframe>
+:::
