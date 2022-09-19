@@ -6,6 +6,7 @@ format:
     fontsize: 0.8em
     linestretch: 1
 ---
+
 ```{r include=FALSE}
 library(latex2exp)
 ```
@@ -19,17 +20,29 @@ This is a follow-up article from [Bayes#1](https://adriancorrendo.github.io/stat
 
 Computing posterior distributions:
 
-#1. Acceptance/Rejection Sampling
-Basics:  
-1. Generate proposal parameter values
-2. Generate data with those parameters  
-3. Compare the simulated data with the observed data = "difference"
-4. "**Accept**" that combination of parameters if the difference < predifined acceptable error.
-   "**Reject**" if the difference > predifined acceptable error.
-   
-See an example:  
+#1. Acceptance/Rejection Sampling Basics:\
+#2. Markov Chain Monte Carlo (MCMC) More efficient than AR sampling.
 
-Using data of yield vesus plant density in corn:  
+Packages for Bayesian analysis in R:
+
+#3. brms
+
+#4. rstan
+
+#5. rjags
+:::
+
+## Computing posterior distributions:
+
+### 1. Acceptance/Rejection Sampling Basics:
+
+1\. Generate proposal parameter values 2. Generate data with those parameters\
+3. Compare the simulated data with the observed data = "difference" 4. "**Accept**" that combination of parameters if the difference \< predifined acceptable error. "**Reject**" if the difference \> predifined acceptable error.
+
+See an example:
+
+Using data of yield vesus plant density in corn:
+
 ```{r, echo=FALSE}
 b0_true <- 5
 b1_true <- 2.2
@@ -55,7 +68,6 @@ error <- 80  # Allowable difference between simulated data and real data
 n <- length(x)
 ```
 
-
 ```{r prep objects, include=FALSE}
 posterior_samp_parameters <- matrix(, K_tries, 4)  # Matrix to samples of save unknown parameters
 colnames(posterior_samp_parameters) <- c("b0", "b1", "b2", "sigma")
@@ -67,7 +79,7 @@ y_hat <- matrix(, K_tries, n)  # Matrix to samples of save unknown number of who
 k = 1
 ```
 
-1. Generate proposal parameter values **using the prior ditributions**:  
+1.  Generate proposal parameter values **using the prior ditributions**:
 
 $$\beta_0 \sim uniform(4, 6)$$
 
@@ -86,20 +98,20 @@ mu_try <- b0_try + x*b1_try - (x^2)*b2_try
 sigma_try <- rgamma(1, 2, 2)
 ```
 
-2. Generate data with those parameters  
+2.  Generate data with those parameters\
+
 ```{r demo 1b}
 set.seed(567)
 y_try <- rnorm(n, mu_try, sigma_try)  # Process model
 ```
 
-3. Compare the simulated data with the observed data = "difference"
+3.  Compare the simulated data with the observed data = "difference"
 
 ```{r demo 1c}
 # Record difference between draw of y from prior predictive distribution and
 # observed data
 diff[k, ] <- sum(abs(y - y_try))
 ```
-
 
 ```{r demo 1d, include=FALSE}
 # Save unkown random variables and parameters
@@ -108,8 +120,7 @@ y_hat[k, ] <- y_try
 posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
 ```
 
-4. "**Accept**" (gold) that combination of parameters if the difference < predifined acceptable error.
-   "**Reject**" (red) if the difference > predifined acceptable error.
+4.  "**Accept**" (gold) that combination of parameters if the difference \< predifined acceptable error. "**Reject**" (red) if the difference \> predifined acceptable error.
 
 ```{r demo 1e}
 plot(x, y, xlab = "Plant density", 
@@ -147,6 +158,7 @@ points(x, y_hat[k,], typ = "b", lwd = 2,
        col = ifelse(diff[1] < error, "gold", "tomato"))
 
 ```
+
 ```{r demo 1g, echo=FALSE}
 set.seed(76543)
 k = 1
@@ -176,7 +188,7 @@ points(x, y_hat[k,], typ = "b", lwd = 2,
 
 ```
 
-Now, what if whe change the priors:  
+Now, what if whe change the priors:
 
 ```{r echo=FALSE}
 k = 1
@@ -206,7 +218,7 @@ points(x, y_hat[k,], typ = "b",
        col = ifelse(diff[1] < error, "gold", "tomato"))
 ```
 
-Now, do many tries  
+Now, do many tries
 
 ```{r}
 for (k in 1:K_tries) {
@@ -231,17 +243,18 @@ for (k in 1:K_tries) {
 ```
 
 Acceptance rate
+
 ```{r}
 length(which(diff < error))/K_tries
 ```
 
 Priors versus posteriors:
+
 ```{r, echo=FALSE}
 hist(posterior_samp_parameters[which(diff < error), 1], col = "grey", freq = FALSE, 
     xlim = c(1.5, 10.5), main = "", xlab = TeX("$\\beta_0  | \\y$"), ylab = TeX("$\\lbrack\\beta_0  | \\y\\rbrack$"))
 curve(dunif(x, 2, 10), col = "tomato", lwd = 3, add = TRUE)
 ```
-
 
 ```{r post 2, echo=FALSE}
 hist(posterior_samp_parameters[which(diff < error), 2], col = "grey", freq = FALSE, 
@@ -261,7 +274,6 @@ hist(y_hat[which(diff < error), 25], col = "grey", freq = FALSE)
 abline(v = y[25], col = 'gold', lty = "dashed", lwd = 5)
 ```
 
-
 ```{r final, include=FALSE}
 e.y <- colMeans(y_hat[which(diff < error), ])
 
@@ -279,26 +291,54 @@ points(x, e.y, typ = "l", lwd = 2)
 polygon(c(x, rev(x)), c(lwr.CI, rev(upper.CI)), col = rgb(0.5, 0.5, 0.5, 0.3), border = NA)
 ```
 
-
-#2. Markov Chain Monte Carlo (MCMC)
-More efficient than AR sampling.  
-
-
-Packages for Bayesian analysis in R:
-
-#3. brms
-
-#4. rstan
-
-#5. rjags
-:::
-
 Let's get started
 
-## 1. Markov Chain Monte Carlo
+## 2. Markov Chain Monte Carlo
 
 ::: {align="center"}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Qqz5AJjyugM" frameborder="0" allowfullscreen>
 
 </iframe>
 :::
+
+## 3. brms: Bayesian Regression Models using "Stan"
+
+![](images/brms.png)
+
+Documentation: <https://paul-buerkner.github.io/brms/>
+
+Bug-reports: <https://github.com/paul-buerkner/brms/issues>
+
+*brms* is a very handy R-package that facilitates running Bayesian models using a relatively simple syntax. It is basically and interface that runs "Stan" behind the scenes. It uses a syntax quite similar to the [lme4](https://cran.r-project.org/package=lme4) package.
+
+It allows to use several different type of distributions and link functions for models that are linear, counts, survival, response, ordinal, zero-inflated, etc.
+
+Due to its relatively simple syntax, today, we are going to start our Bayesian coding with brms.
+
+More about brms at <https://www.jstatsoft.org/article/view/v080i01>
+
+![](images/paste-6C740B97.png){width="336"}
+
+## 4. rstan: R interface to "Stan"
+
+![](images/stanlogo.png){width="190"}
+
+Documentation: <https://mc-stan.org/rstan/>
+
+Bug reports: <https://github.com/stan-dev/rstan/issues/>
+
+*stan* is a stand-alone open-source software platform designed for statistical modeling using high-performance statistical computation applying its own language. When selecting the Bayesian computational approach (i.e. ***rejection sampling criteria***) there are several alternatives to choose. *Stan* produces Bayesian statistical inference following Hamiltonian Monte Carlo (HMC), and No-U-Turn Samples (NUTS). Besides R, *stan* has interfaces with other popular languages such as Python, MATLAB, Julia.
+
+In contrast to *brms*, stan's syntax is more complicated for begginers, but the positive side is that requires us to write the statistical model.
+
+We will not fit a model directly with stan today, but *brms* brings a function that allows users to obtain the code to run the analysis by ourselves using rstan. Let's see...
+
+## 5. rjags: R interface to "Just Another Gibbs Sampler"
+
+![](images/stanlogo.png){width="190"}
+
+Documentation: <https://mcmc-jags.sourceforge.io/>
+
+Bug reports: <https://sourceforge.net/projects/mcmc-jags/>
+
+*rjags* is another popular option for Bayesian statistical inference following MCMC using R. *Rjags* produces Bayesian statistical inference following BUGS language (WinBUGS). Similar to *stan*, *rjags* it is probably not for beginner, since it requires us to write out the statistical model (although it is always ideal). To extract the posteriors, it also requires [coda](https://cran.r-project.org/web/packages/coda/index.html), which is especially designed for summarizing and plotting MCMC simulations.
