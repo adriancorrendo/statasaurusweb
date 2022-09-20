@@ -33,3 +33,4 @@ format:
 | Thomas Varela       | <https://github.com/thomasvarela>        |
 | Leonardo Bosche     | \-                                       |
 | Agustina Goñi       | \-                                       |
+| Yesica Chazarreta   | \-                                       |

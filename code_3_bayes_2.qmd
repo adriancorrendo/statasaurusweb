@@ -1,5 +1,5 @@
 ---
-title: "Code #2"
+title: "Code #3"
 author: "Adrian Correndo & Josefina Lacasa"
 format:
   html:
@@ -30,6 +30,7 @@ Packages for Bayesian analysis in R:
 :::
 
 ## Packages to use today
+
 ```{r include=TRUE, warning=FALSE, message=FALSE}
 library(latex2exp)
 library(dplyr)
