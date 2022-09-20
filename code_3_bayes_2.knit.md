@@ -7,6 +7,7 @@ format:
     linestretch: 1
 ---
 
+
 # Introduction to Bayesian Stats #2
 
 This is a follow-up article from [Bayes#1](https://adriancorrendo.github.io/statasaurusweb/code_2_bayes_1.html). Still, we do have numerous important concepts in order to understand what the computational codes are doing behind scenes when running a Bayesian analysis.
@@ -30,7 +31,10 @@ Packages for Bayesian analysis in R:
 :::
 
 ## Packages to use today
-```{r include=TRUE, warning=FALSE, message=FALSE}
+
+::: {.cell}
+
+```{.r .cell-code}
 library(latex2exp)
 library(dplyr)
 library(ggplot2)
@@ -39,8 +43,9 @@ library(tibble)
 library(purrr)
 library(brms)
 library(tidybayes)
-
 ```
+:::
+
 
 ## Computing posterior distributions:
 
@@ -58,48 +63,24 @@ See an example:
 
 Using data of yield vs plant density in corn:
 
-```{r, echo=FALSE}
-b0_true <- 5
-b1_true <- 2.2
-b2_true <- .125
 
-x <- seq(3, 12, by = .2)
-mu <- b0_true + x*b1_true - (x^2)*b2_true
-
-set.seed(42)
-y <- mu + rnorm(length(x), 0, sqrt(.4))
-plot(x, y)
-
-data_frame <- new_tibble(list(x = x, y = y))
-
-
-
-```
+::: {.cell}
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/unnamed-chunk-2-1.png){width=672}
+:::
+:::
 
 $$ y = \beta_0 + x \cdot \beta_1 - x^2 \cdot \beta_2$$
 
-```{r settings, include=FALSE}
-# Algorithm settings
-K_tries <- 10^6  # Number of simulated data sets to make
-diff <- matrix(, K_tries, 1)  # Vector to save the measure of discrepancy between simulated data and real data
-error <- 80  # Allowable difference between simulated data and real data
 
-# Known random variables and parameters
-n <- length(x)
-```
 
-```{r prep objects, include=FALSE}
-posterior_samp_parameters <- matrix(, K_tries, 4)  # Matrix to samples of save unknown parameters
-colnames(posterior_samp_parameters) <- c("b0", "b1", "b2", "sigma")
 
-y_hat <- matrix(, K_tries, n)  # Matrix to samples of save unknown number of whooping cranes
-```
 
-```{r demo acc-rej, include=FALSE}
-k = 1
-```
+
+
 
 1.  Generate proposal parameter values **using the prior ditributions**:
+
 
 $$\beta_0 \sim uniform(4, 6)$$
 
@@ -109,7 +90,9 @@ $$\beta_2 \sim uniform(0.5, 2)$$
 
 $$\sigma \sim Gamma(2, 2)$$
 
-```{r demo 1}
+::: {.cell}
+
+```{.r .cell-code}
 set.seed(567)
 b0_try <- runif(1, 4, 6)  # Parameter model
 b1_try <- runif(1, 1, 3)  # Parameter model 
@@ -117,32 +100,42 @@ b2_try <- rgamma(1, .5, 2) # Mathematical equation for process model
 mu_try <- b0_try + x*b1_try - (x^2)*b2_try
 sigma_try <- rgamma(1, 2, 2)
 ```
+:::
+
 
 2.  Generate data with those parameters\
 
-```{r demo 1b}
+
+::: {.cell}
+
+```{.r .cell-code}
 set.seed(567)
 y_try <- rnorm(n, mu_try, sigma_try)  # Process model
 ```
+:::
+
 
 3.  Compare the simulated data with the observed data = "difference"
 
-```{r demo 1c}
+
+::: {.cell}
+
+```{.r .cell-code}
 # Record difference between draw of y from prior predictive distribution and
 # observed data
 diff[k, ] <- sum(abs(y - y_try))
 ```
+:::
 
-```{r demo 1d, include=FALSE}
-# Save unkown random variables and parameters
-y_hat[k, ] <- y_try
 
-posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
-```
+
 
 4.  "**Accept**" (gold) that combination of parameters if the difference \< predifined acceptable error. "**Reject**" (red) if the difference \> predifined acceptable error.
 
-```{r demo 1e}
+
+::: {.cell}
+
+```{.r .cell-code}
 plot(x, y, xlab = "Plant density", 
      ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
      typ = "b", cex = 0.8, pch = 20, col = rgb(0.7, 0.7, 0.7, 0.9))
@@ -150,97 +143,40 @@ points(x, y_hat[k,], typ = "b", lwd = 2,
        col = ifelse(diff[1] < error, "gold", "tomato"))
 ```
 
-```{r demo 1f, echo=FALSE}
-set.seed(66789)
-k = 1
-b0_try <- runif(1, 4, 6)  # Parameter model
-b1_try <- runif(1, 1, 3)  # Parameter model 
-b2_try <- rgamma(1, .5, 2) # Mathematical equation for process model
-mu_try <- b0_try + x*b1_try - (x^2)*b2_try
-sigma_try <- rgamma(1, 2, 2)
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/demo 1e-1.png){width=672}
+:::
+:::
 
-y_try <- rnorm(n, mu_try, sigma_try)  # Process model
+::: {.cell}
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/demo 1f-1.png){width=672}
+:::
+:::
 
-# Record difference between draw of y from prior predictive distribution and
-# observed data
-diff[k, ] <- sum(abs(y - y_try))
+::: {.cell}
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/demo 1g-1.png){width=672}
+:::
+:::
 
-# Save unkown random variables and parameters
-y_hat[k, ] <- y_try
-
-posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
-
-plot(x, y, xlab = "Plant density", 
-     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
-     typ = "b", cex = 0.8, pch = 20, col = rgb(0.7, 0.7, 0.7, 0.9))
-
-points(x, y_hat[k,], typ = "b", lwd = 2, 
-       col = ifelse(diff[1] < error, "gold", "tomato"))
-
-```
-
-```{r demo 1g, echo=FALSE}
-set.seed(76543)
-k = 1
-b0_try <- runif(1, 4, 6)  # Parameter model
-b1_try <- runif(1, 1, 3)  # Parameter model 
-b2_try <- rgamma(1, .5, 2) # Mathematical equation for process model
-mu_try <- b0_try + x*b1_try - (x^2)*b2_try
-sigma_try <- rgamma(1, 2, 2)
-
-y_try <- rnorm(n, mu_try, sigma_try)  # Process model
-
-# Record difference between draw of y from prior predictive distribution and
-# observed data
-diff[k, ] <- sum(abs(y - y_try))
-
-# Save unkown random variables and parameters
-y_hat[k, ] <- y_try
-
-posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
-
-plot(x, y, xlab = "Plant density", 
-     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
-     typ = "b", cex = 0.8, pch = 20, col = rgb(0.7, 0.7, 0.7, 0.9))
-
-points(x, y_hat[k,], typ = "b", lwd = 2, 
-       col = ifelse(diff[1] < error, "gold", "tomato"))
-
-```
 
 Now, what if whe change the priors:
 
-```{r echo=FALSE}
-k = 1
-b0_try <- rnorm(1, 5, .01)  # Parameter model
-b1_try <- rnorm(1, 2.2, .01)  # Parameter model 
-b2_try <- rgamma(1, .25, 2) # Mathematical equation for process model
-mu_try <- b0_try + x*b1_try - (x^2)*b2_try
-sigma_try <- rgamma(1, 2, 2)
 
-y_try <- rnorm(n, mu_try, sigma_try)  # Process model
+::: {.cell}
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/unnamed-chunk-3-1.png){width=672}
+:::
+:::
 
-# Record difference between draw of y from prior predictive distribution and
-# observed data
-diff[k, ] <- sum(abs(y - y_try))
-
-# Save unkown random variables and parameters
-y_hat[k, ] <- y_try
-
-posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
-
-plot(x, y, xlab = "Plant density",
-     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
-     typ = "b", cex = 0.8, pch = 20, col = "grey20")
-
-points(x, y_hat[k,], typ = "b",
-       lwd = 2, 
-       col = ifelse(diff[1] < error, "gold", "tomato"))
-```
 
 Now, do many tries
 
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 for (k in 1:K_tries) {
     
     b0_try <- runif(1, 2, 10)  # Parameter model
@@ -261,55 +197,67 @@ for (k in 1:K_tries) {
     posterior_samp_parameters[k, ] <- c(b0_try, b1_try, b2_try, sigma_try)
 }
 ```
+:::
+
 
 Acceptance rate
 
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 length(which(diff < error))/K_tries
 ```
 
+::: {.cell-output .cell-output-stdout}
+```
+[1] 0.031291
+```
+:::
+:::
+
+
 Priors versus posteriors:
 
-```{r, echo=FALSE}
-hist(posterior_samp_parameters[which(diff < error), 1], col = "grey", freq = FALSE, 
-    xlim = c(1.5, 10.5), main = "", xlab = TeX("$\\beta_0  | \\y$"), ylab = TeX("$\\lbrack\\beta_0  | \\y\\rbrack$"))
-curve(dunif(x, 2, 10), col = "tomato", lwd = 3, add = TRUE)
-```
 
-```{r post 2, echo=FALSE}
-hist(posterior_samp_parameters[which(diff < error), 2], col = "grey", freq = FALSE, 
-    xlim = c(2, 3), main = "", xlab = TeX("$\\beta_1  | \\y$"), 
-    ylab = TeX("$\\lbrack\\beta_1  | \\y\\rbrack$"))
-curve(dnorm(x, 2.2, .5), col = "tomato", lwd = 3, add = TRUE)
-```
+::: {.cell}
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/unnamed-chunk-6-1.png){width=672}
+:::
+:::
 
-```{r post 3, echo=FALSE}
-hist(posterior_samp_parameters[which(diff < error), 3], col = "grey", freq = FALSE, 
-    xlim = c(0, 1), main = "", xlab = TeX("$\\beta_2  | \\y$"), ylab = TeX("$\\lbrack\\beta_2  | \\y\\rbrack$"))
-curve(dgamma(x, .25, 2), col = "tomato", lwd = 3, add = TRUE)
-```
+::: {.cell}
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/post 2-1.png){width=672}
+:::
+:::
 
-```{r}
+::: {.cell}
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/post 3-1.png){width=672}
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
 hist(y_hat[which(diff < error), 25], col = "grey", freq = FALSE)
 abline(v = y[25], col = 'gold', lty = "dashed", lwd = 5)
 ```
 
-```{r final, include=FALSE}
-e.y <- colMeans(y_hat[which(diff < error), ])
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/unnamed-chunk-7-1.png){width=672}
+:::
+:::
 
-lwr.CI <- apply(y_hat[which(diff < error), ], 2, FUN = quantile, prob = c(0.025))
-upper.CI <- apply(y_hat[which(diff < error), ], 2, FUN = quantile, prob = c(0.975))
-```
 
-```{r, echo=FALSE}
-plot(x, y, xlab = "Plant density",
-     ylab = "Observed yield", xlim = c(2, 13), ylim = c(5, 20),
-     typ = "b", cex = 0.8, pch = 20, col = "grey20")
 
-points(x, e.y, typ = "l", lwd = 2)
+::: {.cell}
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/unnamed-chunk-8-1.png){width=672}
+:::
+:::
 
-polygon(c(x, rev(x)), c(lwr.CI, rev(upper.CI)), col = rgb(0.5, 0.5, 0.5, 0.3), border = NA)
-```
 
 Let's get started
 
@@ -345,7 +293,10 @@ Let's fit the example using the brms package.
 
 ### brms pars
 
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 # Set up pars
 WU = 1000
 IT = 5000
@@ -353,11 +304,15 @@ TH = 5
 CH = 4
 AD = 0.99
 ```
+:::
+
 
 ### Model
 
-```{r}
 
+::: {.cell}
+
+```{.r .cell-code}
 #| eval: false
 #| echo: true
 
@@ -392,7 +347,21 @@ bayes_model <-
   warmup = WU, iter = IT, thin = TH,
   chains = CH, cores = CH,
   init_r = 0.1, seed = 1) 
+```
 
+::: {.cell-output .cell-output-stderr}
+```
+Compiling Stan program...
+```
+:::
+
+::: {.cell-output .cell-output-stderr}
+```
+Start sampling
+```
+:::
+
+```{.r .cell-code}
 # 02. Save object
 saveRDS(object = bayes_model, file = "bayes_model.RDS")
 
@@ -400,21 +369,72 @@ bayes_model <- readRDS(file = "bayes_model.RDS")
 
 # 03. Visual Diagnostic
 plot(bayes_model)
+```
 
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/unnamed-chunk-10-1.png){width=672}
+:::
+
+```{.r .cell-code}
 # Visualize model results
 bayes_model
+```
 
+::: {.cell-output .cell-output-stdout}
+```
+ Family: gaussian 
+  Links: mu = identity; sigma = identity 
+Formula: y ~ B0 + B1 * x - B2 * (x^2) 
+         B0 ~ 1
+         B1 ~ 1
+         B2 ~ 1
+   Data: data_frame (Number of observations: 46) 
+  Draws: 4 chains, each with iter = 5000; warmup = 1000; thin = 5;
+         total post-warmup draws = 3200
+
+Population-Level Effects: 
+             Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+B0_Intercept     6.16      0.90     4.36     7.96 1.00     2462     2456
+B1_Intercept     1.93      0.26     1.42     2.45 1.00     2386     2619
+B2_Intercept     0.11      0.02     0.08     0.15 1.00     2395     2591
+
+Family Specific Parameters: 
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sigma     0.75      0.08     0.60     0.93 1.00     2969     2807
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+```
+:::
+
+```{.r .cell-code}
 # Compare vs traditional linear model (lm)
 data_frame_q <- data_frame %>% mutate(x2 = x^2)
 
 lm(data = data_frame_q, formula = y ~ x + x2)
-
-
 ```
+
+::: {.cell-output .cell-output-stdout}
+```
+
+Call:
+lm(formula = y ~ x + x2, data = data_frame_q)
+
+Coefficients:
+(Intercept)            x           x2  
+     6.1324       1.9401      -0.1127  
+```
+:::
+:::
+
 
 ### Extract posterior distributions
 
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 # Create predictions
 m1 <- data_frame %>% 
   ungroup() %>% 
@@ -430,7 +450,16 @@ m1 <- data_frame %>%
   # use ".linpred to summarize"
   tidybayes::add_predicted_draws(bayes_model, 
                                  re_formula = NA, ndraws = NULL) %>% ungroup()
+```
 
+::: {.cell-output .cell-output-stderr}
+```
+Warning: `cols` is now required when using unnest().
+Please use `cols = c(data)`
+```
+:::
+
+```{.r .cell-code}
 # Summarize
 m1_quantiles <- m1 %>% 
   group_by(x) %>% 
@@ -476,6 +505,12 @@ m1_plot <- ggplot()+
 m1_plot
 ```
 
+::: {.cell-output-display}
+![](code_3_bayes_2_files/figure-html/unnamed-chunk-11-1.png){width=672}
+:::
+:::
+
+
 ## 4. rstan: R interface to "Stan"
 
 ![](images/stanlogo.png){width="190"}
@@ -499,3 +534,4 @@ Documentation: <https://mcmc-jags.sourceforge.io/>
 Bug reports: <https://sourceforge.net/projects/mcmc-jags/>
 
 *rjags* is another popular option for Bayesian statistical inference following MCMC using R. *Rjags* produces Bayesian statistical inference following BUGS language (WinBUGS). Similar to *stan*, *rjags* it is probably not for beginner, since it requires us to write out the statistical model (although it is always ideal). To extract the posteriors, it also requires [coda](https://cran.r-project.org/web/packages/coda/index.html), which is especially designed for summarizing and plotting MCMC simulations.
+
