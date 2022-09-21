@@ -1,5 +1,5 @@
 ---
-title: "Code #2"
+title: "Week #2"
 author: "Adrian Correndo & Josefina Lacasa"
 format:
   html:
@@ -103,7 +103,7 @@ There is a very important difference between Frequentism and Bayesianism in term
 
 -   **Confidence intervals (Frequentist)**: *"If we repeat the experiment infinite times, 95% of the estimated confidence intervals will contain the true value of* $\theta$ *(based on repeated measurements)"*. Note that since $\theta$ is fixed, it can only be within or outside the interval.
 
--   **Credible intervals (Bayesian)**: In contrast, Bayesianism has a "literal" interpretation of the error saying, *"there is a probability of 95% that the parameter* $\theta$ *lies within this credible interval".* This is a range of probable values. Note: "Given that the prior is correct"...\
+-   **Credible intervals (Bayesian)**: In contrast, Bayesianism has a "literal" interpretation of the error saying, \*"there is a probability of 95% that the parameter\* $\theta$ *lies within this credible interval".* This is a range of probable values. Note:"Given that the prior is correct"...\
 
 ## 6. Useful Resources
 

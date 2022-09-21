@@ -1,5 +1,5 @@
 ---
-title: "Code #3"
+title: "Week #3"
 author: "Adrian Correndo & Josefina Lacasa"
 format:
   html:
@@ -316,13 +316,29 @@ Let's get started
 
 ## 2. Markov Chain Monte Carlo
 
+![](images/Handbook.jpg){width="241"}
+
+Markov chain Monte Carlo (MCMC) methods have revolutionized statistical computing and have had an especially profound impact on the practice of Bayesian statistics (Brooks et al., 2011).
+
+In a nutshell, MCMC represents a family of algorithms that facilitate the generation of random samples from probability distributions that are difficult (e.g. high-dimensional) to sample directly. They are "chains" because the random samples are produced in consecutive-dependent steps (i.e. step 2 comes from step 1, step 3 comes from step 2, ....). This details is a game-changer to more efficiently use and integrate Monte Carlos simulations.
+
+Sources on MCMC:
+
+<https://www.mcmchandbook.net/>
+
+<https://cran.r-project.org/package=MCMCpack>
+
+<https://cran.r-project.org/package=mcmc>
+
+<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3759243>
+
 ::: {align="center"}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Qqz5AJjyugM" frameborder="0" allowfullscreen>
 
 </iframe>
 :::
 
-## 3. brms: Bayesian Regression Models using "Stan"
+## 3. *brms*: Bayesian Regression Models using "Stan"
 
 ![](images/brms.png)
 
@@ -413,7 +429,7 @@ lm(data = data_frame_q, formula = y ~ x + x2)
 
 ```
 
-### Extract posterior distributions
+### Using posterior distributions
 
 ```{r}
 # Create predictions
@@ -477,7 +493,7 @@ m1_plot <- ggplot()+
 m1_plot
 ```
 
-## 4. rstan: R interface to "Stan"
+## 4. *rstan*: R interface to "Stan"
 
 ![](images/stanlogo.png){width="190"}
 
@@ -491,7 +507,7 @@ In contrast to *brms*, stan's syntax is more complicated for begginers, but the 
 
 We will not fit a model directly with stan today, but *brms* brings a function that allows users to obtain the code to run the analysis by ourselves using rstan. Let's see...
 
-## 5. rjags: R interface to "Just Another Gibbs Sampler"
+## 5. *rjags*: R interface to "Just Another Gibbs Sampler"
 
 ![](images/1601161_JAGS.png){width="318"}
 
