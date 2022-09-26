@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Adrian Correndo &amp; Josefina Lacasa">
 
-<title>Statasaurus - Fall 2022 - Resources</title>
+<title>Statasaurus - Fall 2022 - Week #4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +25,7 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./resources.html" rel="next">
 <link href="./code_3_bayes_2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -54,13 +56,14 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Statasaurus - Fall 2022 - Resources">
-<meta property="og:description" content="This section is intended to serve as a repo where we can share docs, papers, links, tutorials, etc. useful for each topic as well as random content.">
+<meta property="og:title" content="Statasaurus - Fall 2022 - Week #4">
+<meta property="og:description" content="This article is a review and final example to wrap up our brief introduction to Bayesian data analysis.">
 <meta property="og:site-name" content="Statasaurus - Fall 2022">
-<meta name="twitter:title" content="Statasaurus - Fall 2022 - Resources">
-<meta name="twitter:description" content="This section is intended to serve as a repo where we can share docs, papers, links, tutorials, etc. useful for each topic as well as random content.">
+<meta name="twitter:title" content="Statasaurus - Fall 2022 - Week #4">
+<meta name="twitter:description" content="This article is a review and final example to wrap up our brief introduction to Bayesian data analysis.">
 <meta name="twitter:creator" content="@aacorrendo">
 <meta name="twitter:card" content="summary">
 </head>
@@ -71,7 +74,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Resources</h1>
+      <h1 class="quarto-secondary-nav-title">Week #4</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -124,12 +127,12 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Code</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Code</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./code_1_intro.html" class="sidebar-item-text sidebar-link">1_intro</a>
@@ -145,19 +148,24 @@ ul.task-list{list-style: none;}
   <a href="./code_3_bayes_2.html" class="sidebar-item-text sidebar-link">3_bayes_2</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./code_4_bayes_3.html" class="sidebar-item-text sidebar-link active">4_bayes_3</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Resources</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Resources</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources.html" class="sidebar-item-text sidebar-link active">Resources</a>
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">Resources</a>
   </div>
 </li>
       </ul>
@@ -167,20 +175,37 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this section</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-bayesian-stats" id="toc-introduction-to-bayesian-stats" class="nav-link active" data-scroll-target="#introduction-to-bayesian-stats">Introduction to Bayesian Stats</a>
+  <ul class="collapse">
+  <li><a href="#hierarchical-structure" id="toc-hierarchical-structure" class="nav-link" data-scroll-target="#hierarchical-structure">Hierarchical structure</a></li>
+  <li><a href="#posterior-distribution" id="toc-posterior-distribution" class="nav-link" data-scroll-target="#posterior-distribution">Posterior distribution</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/adriancorrendo/statasaurusweb/edit/main/code_4_bayes_3.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/adriancorrendo/statasaurusweb/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Resources</h1>
+<h1 class="title d-none d-lg-block">Week #4</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Adrian Correndo &amp; Josefina Lacasa </p>
+          </div>
+  </div>
     
     
   </div>
@@ -188,9 +213,68 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>This section is intended to serve as a repo where we can share docs, papers, links, tutorials, etc. useful for each topic as well as random content.</p>
+<section id="introduction-to-bayesian-stats" class="level1">
+<h1>Introduction to Bayesian Stats</h1>
+<p>This article is a review and final example to wrap up our brief introduction to Bayesian data analysis.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Under the Bayesian approach we consider probability as an expression of the degree of certainty (or uncertainty) about a process or parameter.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>REMEMBER!</p>
+<p>The structure of the Bayesian theory is similar to the Human Logic process. It is all about updating knowledge:</p>
+<p>(i) we have some data,</p>
+<p>(ii) we have beliefs about the underlying process,</p>
+<p>(iii) combining both, we can update our beliefs.</p>
+</div>
+</div>
+<p>Thus, the Bayes Theorem says</p>
+<p><span class="math display">\[ P(\theta | x)  = P(\theta) * \frac{P(x|\theta)}{P(x)}\]</span> where <span class="math inline">\(\theta\)</span> is the parameter of interest, <span class="math inline">\(x\)</span> is the data, and “|” means “conditional”.</p>
+<p><span class="math display">\[ Knowledge~after  = Knowledge~before * updating~factor\]</span> <span class="math display">\[ Posterior~distribution  = Prior~distribution * \frac{Likelihood} {Marginal Likelihood} \]</span></p>
+<section id="hierarchical-structure" class="level3">
+<h3 class="anchored" data-anchor-id="hierarchical-structure">Hierarchical structure</h3>
+<p>You may have heard multiple times about Bayesian Hierarchical Framework or Bayesian Hierarchical Modelling. This simply means that our model is compound by multiple levels differing in hierarchy. There are two relevant concepts here to derive the posterior distributions:</p>
+<ol type="1">
+<li><p><strong>Hyper-parameters</strong> are the parameters of the prior distribution. For example, if we have $ Y|N(, ^2)$, with <span class="math inline">\(\mu = \beta_0 *X\)</span> as the “top-level” parameter describing the process model, where <span class="math inline">\(\beta_0\)</span> is the hyper-parameter.</p></li>
+<li><p><strong>Hyper-priors</strong> are the distributions of the hyper-parameters. For example, <span class="math inline">\(\beta_0 \sim N(\beta_0, \sigma^2_{\beta_0})\)</span> is the hyper-prior of <span class="math inline">\(\beta_0\)</span></p></li>
+</ol>
+<p>Basically, we have a set of layers:</p>
+<p>Layer 1:</p>
+<p><span class="math display">\[ y_i|\mu_i, \beta_0 \sim P(y_i|\mu_i, \beta_0)\]</span></p>
+<p>Layer 2:</p>
+<p><span class="math display">\[ \mu_i| \beta_0 \sim P(\mu_i|\beta_0)\]</span></p>
+<p>Layer 3:</p>
+<p><span class="math display">\[ \beta_0 \sim P(\beta_0)\]</span></p>
+</section>
+<section id="posterior-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="posterior-distribution">Posterior distribution</h3>
+<p><span class="math inline">\(P(\theta|x)\)</span> is a probability density function that quantifies the “uncertainty” about <span class="math inline">\(\theta\)</span> within a specific model after the data collection.</p>
+<p>In practice, however, we never know this specific function. So what we do is to create multiple simulations given the prior/s and the data, and then summarizing those simulations (e.g.&nbsp;obtaining credible intervals at variable probability levels, for example, 95%).</p>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -297,6 +381,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./resources.html" class="pagination-link">
+        <span class="nav-page-text">Resources</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

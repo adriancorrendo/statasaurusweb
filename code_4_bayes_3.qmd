@@ -1,0 +1,59 @@
+---
+title: "Week #4"
+author: "Adrian Correndo & Josefina Lacasa"
+format:
+  html:
+    fontsize: 0.8em
+    linestretch: 1
+---
+
+# Introduction to Bayesian Stats
+
+This article is a review and final example to wrap up our brief introduction to Bayesian data analysis.
+
+::: callout-important
+Under the Bayesian approach we consider probability as an expression of the degree of certainty (or uncertainty) about a process or parameter.
+:::
+
+::: callout-note
+REMEMBER!
+
+The structure of the Bayesian theory is similar to the Human Logic process. It is all about updating knowledge:
+
+\(i\) we have some data,
+
+\(ii\) we have beliefs about the underlying process,
+
+\(iii\) combining both, we can update our beliefs.
+:::
+
+Thus, the Bayes Theorem says
+
+$$ P(\theta | x)  = P(\theta) * \frac{P(x|\theta)}{P(x)}$$ where $\theta$ is the parameter of interest, $x$ is the data, and "\|" means "conditional".
+
+$$ Knowledge~after  = Knowledge~before * updating~factor$$ $$ Posterior~distribution  = Prior~distribution * \frac{Likelihood} {Marginal Likelihood} $$
+
+### Hierarchical structure
+
+You may have heard multiple times about Bayesian Hierarchical Framework or Bayesian Hierarchical Modelling. This simply means that our model is compound by multiple levels differing in hierarchy. There are two relevant concepts here to derive the posterior distributions:
+
+1.  **Hyper-parameters** are the parameters of the prior distribution. For example, if we have $ Y|\mu \sim N(\mu, \sigma^2)$, with $\mu = \beta_0 *X$ as the "top-level" parameter describing the process model, where $\beta_0$ is the hyper-parameter.
+
+2.  **Hyper-priors** are the distributions of the hyper-parameters. For example, $\beta_0 \sim N(\beta_0, \sigma^2_{\beta_0})$ is the hyper-prior of $\beta_0$
+
+Basically, we have a set of layers:
+
+Layer 1:
+$$ y_i|\mu_i, \beta_0 \sim P(y_i|\mu_i, \beta_0)$$
+Layer 2: 
+$$ \mu_i| \beta_0 \sim P(\mu_i|\beta_0)$$
+Layer 3: 
+$$ \beta_0 \sim P(\beta_0)$$
+### Posterior distribution
+
+$P(\theta|x)$ is a probability density function that quantifies the "uncertainty" about $\theta$ within a specific model after the data collection.
+
+In practice, however, we never know this specific function. So what we do is to create multiple simulations given the prior/s and the data, and then summarizing those simulations (e.g. obtaining credible intervals at variable probability levels, for example, 95%).
+
+
+### Example
