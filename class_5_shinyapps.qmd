@@ -32,11 +32,11 @@ In simple words, it can make us better data scientists by:
 
 -   Offering interactive recommendation guidelines.
 
-    -   See [cornyield0N](ciampittilab.shinyapps.io/cornyield0N/), [DONMaiz](ciampittilab.shinyapps.io/DONMaiz/), [SoybeanVRS](https://analytics.iasoybeans.com/cool-apps/SoybeanVRSsimulator/)
+    -   See [cornyield0N](https://ciampittilab.shinyapps.io/cornyield0N/), [DONMaiz](https://ciampittilab.shinyapps.io/DONMaiz/), [SoybeanVRS](https://analytics.iasoybeans.com/cool-apps/SoybeanVRSsimulator/)
 
 -   Facilitating the use of software development by peers (e.g. demo of R packages)
 
-    -   See [soiltestcorr](ciampittilab.shinyapps.io/soiltestcorr/), [metrica](ciampittilab.shinyapps.io/metrica/)
+    -   See [soiltestcorr](https://ciampittilab.shinyapps.io/soiltestcorr/), [metrica](https://ciampittilab.shinyapps.io/metrica/)
 :::
 
 ## 01. Main features
@@ -143,7 +143,7 @@ The main features that I personally highlight are:
 
 -   **Formatting**: As well as base shiny, flexdashboard can optionally apply Bootstrap and [bslib](https://rstudio.github.io/bslib/) to customize colors, fonts, and more.
 
--   **Display code in place**: for teaching, the RMarkdoen syntax using chunks allows us to eventually display the code within the same location on the UI.
+-   **Display code in place**: for teaching, the RMarkdown syntax using chunks allows us to eventually display the code within the same location on the UI.
 
 -   **UI-Server**: There is no need of segregating our code into UI and Server anymore.
 
@@ -156,11 +156,11 @@ Advanced users consider that flexdashboard is limited in comparison to what one 
 
 ```
 
-Let's see an example code using Flexdashboard
+### Example with Flexdashboard
+
+Let's see now an example code using Flexdashboard
 
 CODE: <https://github.com/adriancorrendo/flexdashboard_metrica>
-
-### Example with Flexdashboard
 
 ```{r eval = TRUE, echo = FALSE, out.width= "100%"}
 
