@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://adriancorrendo.github.io/statasaurusweb/class_5_shinyapps.html</loc>
+    <lastmod>2022-10-03T15:56:44.764Z</lastmod>
+  </url>
+  <url>
     <loc>https://adriancorrendo.github.io/statasaurusweb/code_1_intro.html</loc>
-    <lastmod>2022-09-26T16:47:48.087Z</lastmod>
+    <lastmod>2022-10-03T15:56:45.165Z</lastmod>
   </url>
   <url>
     <loc>https://adriancorrendo.github.io/statasaurusweb/code_2_bayes_1.html</loc>
-    <lastmod>2022-09-26T16:47:48.466Z</lastmod>
+    <lastmod>2022-10-03T15:56:45.553Z</lastmod>
   </url>
   <url>
     <loc>https://adriancorrendo.github.io/statasaurusweb/code_3_bayes_2.html</loc>
-    <lastmod>2022-09-26T16:47:49.154Z</lastmod>
+    <lastmod>2022-10-03T15:56:46.331Z</lastmod>
   </url>
   <url>
     <loc>https://adriancorrendo.github.io/statasaurusweb/code_4_bayes_3.html</loc>
-    <lastmod>2022-09-26T16:47:49.486Z</lastmod>
+    <lastmod>2022-10-03T15:56:46.931Z</lastmod>
   </url>
   <url>
     <loc>https://adriancorrendo.github.io/statasaurusweb/index.html</loc>
-    <lastmod>2022-09-26T16:47:50.043Z</lastmod>
+    <lastmod>2022-10-03T15:56:48.035Z</lastmod>
   </url>
   <url>
     <loc>https://adriancorrendo.github.io/statasaurusweb/members.html</loc>
-    <lastmod>2022-09-26T16:47:50.598Z</lastmod>
+    <lastmod>2022-10-03T15:56:48.674Z</lastmod>
   </url>
   <url>
     <loc>https://adriancorrendo.github.io/statasaurusweb/resources.html</loc>
-    <lastmod>2022-09-26T16:47:50.857Z</lastmod>
+    <lastmod>2022-10-03T15:56:48.965Z</lastmod>
   </url>
   <url>
     <loc>https://adriancorrendo.github.io/statasaurusweb/schedule.html</loc>
-    <lastmod>2022-09-26T16:47:51.142Z</lastmod>
+    <lastmod>2022-10-03T15:56:49.309Z</lastmod>
   </url>
 </urlset>
