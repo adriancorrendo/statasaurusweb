@@ -249,9 +249,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#introduction-to-bayesian-stats" id="toc-introduction-to-bayesian-stats" class="nav-link active" data-scroll-target="#introduction-to-bayesian-stats">Introduction to Bayesian Stats</a>
   <ul class="collapse">
-  <li><a href="#hierarchical-structure" id="toc-hierarchical-structure" class="nav-link" data-scroll-target="#hierarchical-structure">Hierarchical structure</a></li>
+  <li><a href="#concepts-review" id="toc-concepts-review" class="nav-link" data-scroll-target="#concepts-review">01. CONCEPTS REVIEW</a>
+  <ul class="collapse">
+  <li><a href="#i.-the-bayes-theorem" id="toc-i.-the-bayes-theorem" class="nav-link" data-scroll-target="#i.-the-bayes-theorem">i. The Bayes Theorem</a></li>
+  <li><a href="#ii.-hierarchical-structure" id="toc-ii.-hierarchical-structure" class="nav-link" data-scroll-target="#ii.-hierarchical-structure">ii. Hierarchical structure</a></li>
   <li><a href="#posterior-distribution" id="toc-posterior-distribution" class="nav-link" data-scroll-target="#posterior-distribution">Posterior distribution</a></li>
-  <li><a href="#lets-run-an-example" id="toc-lets-run-an-example" class="nav-link" data-scroll-target="#lets-run-an-example">Let’s run an example</a>
+  </ul></li>
+  <li><a href="#example-code" id="toc-example-code" class="nav-link" data-scroll-target="#example-code">02. EXAMPLE CODE</a>
   <ul class="collapse">
   <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
   <li><a href="#frequentist-with-lme" id="toc-frequentist-with-lme" class="nav-link" data-scroll-target="#frequentist-with-lme">01. Frequentist with lme</a></li>
@@ -289,6 +293,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="introduction-to-bayesian-stats" class="level1">
 <h1>Introduction to Bayesian Stats</h1>
 <p>This article is a review and final example to wrap up our brief introduction to Bayesian data analysis.</p>
+<section id="concepts-review" class="level2">
+<h2 class="anchored" data-anchor-id="concepts-review">01. CONCEPTS REVIEW</h2>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -319,28 +325,32 @@ Note
 <p>(iii) combining both, we can update our beliefs.</p>
 </div>
 </div>
-<p>Thus, the Bayes Theorem says</p>
+<section id="i.-the-bayes-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="i.-the-bayes-theorem">i. The Bayes Theorem</h3>
 <p><span class="math display">\[ P(\theta | x)  = P(\theta) * \frac{P(x|\theta)}{P(x)}\]</span> where <span class="math inline">\(\theta\)</span> is the parameter of interest, <span class="math inline">\(x\)</span> is the data, and “|” means “conditional”.</p>
 <p><span class="math display">\[ Knowledge~after  = Knowledge~before * updating~factor\]</span> <span class="math display">\[ Posterior~distribution  = Prior~distribution * \frac{Likelihood} {Marginal Likelihood} \]</span></p>
-<section id="hierarchical-structure" class="level3">
-<h3 class="anchored" data-anchor-id="hierarchical-structure">Hierarchical structure</h3>
-<p>You may have heard multiple times about Bayesian Hierarchical Framework or Bayesian Hierarchical Modelling. This simply means that our model is compound by multiple levels differing in hierarchy. Actually, they are usually also referred as multi-level models (Hooten &amp; Hefley, 2019). There are two relevant concepts here to derive the posterior distributions:</p>
+</section>
+<section id="ii.-hierarchical-structure" class="level3">
+<h3 class="anchored" data-anchor-id="ii.-hierarchical-structure">ii. Hierarchical structure</h3>
+<p>You may have heard multiple times about Bayesian Hierarchical Framework or Bayesian Hierarchical Modelling. This simply means that our model is compound by multiple nested levels (hierarchy) where we account for random effects. Actually, they are usually also referred as multi-level models (Hooten &amp; Hefley, 2019). There are two relevant concepts here to derive the posterior distributions:</p>
 <ol type="1">
 <li><p><strong>Hyper-parameters</strong> are the parameters of the prior distribution. For example, if we have $ Y|N(, ^2)$, with <span class="math inline">\(\mu = \beta_1 *X\)</span> as the “top-level” parameter describing the process model, where <span class="math inline">\(\beta_1\)</span> is the hyper-parameter.</p></li>
-<li><p><strong>Hyper-priors</strong> are the distributions of the hyper-parameters. For example, <span class="math inline">\(\beta_1 \sim N(\beta_0, \sigma^2_{\beta_0})\)</span> is the hyper-prior of <span class="math inline">\(\beta_1\)</span></p></li>
+<li><p><strong>Hyper-priors</strong> are the distributions of the hyper-parameters. For example, <span class="math inline">\(\beta_1 \sim N(\mu_{\beta_1}, \sigma^2_{\beta_1})\)</span> is the hyper-prior of <span class="math inline">\(\beta_1\)</span></p></li>
 </ol>
 <p>Basically, we have a set of layers:</p>
-<p>Layer 1: <span class="math display">\[ y_i|\mu_i, \beta_1 \sim P(y_i|\mu_i, \beta_0)\]</span></p>
+<p>Layer 1: <span class="math display">\[ y_i|\mu_i, \beta_1 \sim P(y_i|\mu_i, \beta_1)\]</span></p>
 <p>Layer 2: <span class="math display">\[ \mu_i| \beta_1 \sim P(\mu_i|\beta_1)\]</span></p>
-<p>Layer 3: <span class="math display">\[ \beta_1 \sim P(\beta_1)\]</span></p>
+<p>Layer 3: <span class="math display">\[ \beta_1 \sim P(\beta_1) = \]</span></p>
+<p><span class="math display">\[ \beta_1 \sim N(\mu_{\beta_1}, \sigma^2_{\beta_1})\]</span></p>
 </section>
 <section id="posterior-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="posterior-distribution">Posterior distribution</h3>
 <p><span class="math inline">\(P(\theta|x)\)</span> is a probability density function that quantifies the “uncertainty” about <span class="math inline">\(\theta\)</span> within a specific model after the data collection.</p>
 <p>In practice, however, we never know this specific function. So what we do is to create multiple simulations given the prior/s and the data, and then summarizing those simulations (e.g.&nbsp;obtaining credible intervals at variable probability levels, for example, 95%).</p>
 </section>
-<section id="lets-run-an-example" class="level2">
-<h2 class="anchored" data-anchor-id="lets-run-an-example">Let’s run an example</h2>
+</section>
+<section id="example-code" class="level2">
+<h2 class="anchored" data-anchor-id="example-code">02. EXAMPLE CODE</h2>
 <section id="libraries" class="level3">
 <h3 class="anchored" data-anchor-id="libraries">Libraries</h3>
 <div class="cell">
@@ -526,7 +536,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 
 ELPD    | ELPD_SE |   LOOIC | LOOIC_SE |    WAIC |    R2 | R2 (marg.) | R2 (adj.) | R2_adjusted_marginal |   RMSE
 -----------------------------------------------------------------------------------------------------------------
--90.633 |   2.558 | 181.265 |    5.115 | 179.679 | 0.839 |      0.824 |     0.740 |               -0.331 | 13.943</code></pre>
+-90.633 |   2.558 | 181.265 |    5.115 | 179.679 | 0.839 |      0.824 |     0.740 |               -0.329 | 13.943</code></pre>
 </div>
 </div>
 </section>

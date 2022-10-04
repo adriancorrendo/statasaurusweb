@@ -11,6 +11,8 @@ format:
 
 This article is a review and final example to wrap up our brief introduction to Bayesian data analysis.
 
+## 01. CONCEPTS REVIEW
+
 ::: callout-important
 Under the Bayesian approach we consider probability as an expression of the degree of certainty (or uncertainty) about a process or parameter.
 :::
@@ -27,27 +29,30 @@ The structure of the Bayesian theory is similar to the Human Logic process. It i
 \(iii\) combining both, we can update our beliefs.
 :::
 
-Thus, the Bayes Theorem says
+### i. The Bayes Theorem
+
 
 $$ P(\theta | x)  = P(\theta) * \frac{P(x|\theta)}{P(x)}$$ where $\theta$ is the parameter of interest, $x$ is the data, and "\|" means "conditional".
 
 $$ Knowledge~after  = Knowledge~before * updating~factor$$ $$ Posterior~distribution  = Prior~distribution * \frac{Likelihood} {Marginal Likelihood} $$
 
-### Hierarchical structure
+### ii. Hierarchical structure
 
-You may have heard multiple times about Bayesian Hierarchical Framework or Bayesian Hierarchical Modelling. This simply means that our model is compound by multiple levels differing in hierarchy. Actually, they are usually also referred as multi-level models (Hooten & Hefley, 2019). There are two relevant concepts here to derive the posterior distributions:
+You may have heard multiple times about Bayesian Hierarchical Framework or Bayesian Hierarchical Modelling. This simply means that our model is compound by multiple nested levels (hierarchy) where we account for random effects. Actually, they are usually also referred as multi-level models (Hooten & Hefley, 2019). There are two relevant concepts here to derive the posterior distributions:
 
 1.  **Hyper-parameters** are the parameters of the prior distribution. For example, if we have $ Y|\mu \sim N(\mu, \sigma^2)$, with $\mu = \beta_1 *X$ as the "top-level" parameter describing the process model, where $\beta_1$ is the hyper-parameter.
 
-2.  **Hyper-priors** are the distributions of the hyper-parameters. For example, $\beta_1 \sim N(\beta_0, \sigma^2_{\beta_0})$ is the hyper-prior of $\beta_1$
+2.  **Hyper-priors** are the distributions of the hyper-parameters. For example, $\beta_1 \sim N(\mu_{\beta_1}, \sigma^2_{\beta_1})$ is the hyper-prior of $\beta_1$
 
 Basically, we have a set of layers:
 
-Layer 1: $$ y_i|\mu_i, \beta_1 \sim P(y_i|\mu_i, \beta_0)$$
+Layer 1: $$ y_i|\mu_i, \beta_1 \sim P(y_i|\mu_i, \beta_1)$$
 
 Layer 2: $$ \mu_i| \beta_1 \sim P(\mu_i|\beta_1)$$
 
-Layer 3: $$ \beta_1 \sim P(\beta_1)$$ 
+Layer 3: $$ \beta_1 \sim P(\beta_1) = $$
+
+$$ \beta_1 \sim N(\mu_{\beta_1}, \sigma^2_{\beta_1})$$
 
 ### Posterior distribution
 
@@ -55,9 +60,10 @@ $P(\theta|x)$ is a probability density function that quantifies the "uncertainty
 
 In practice, however, we never know this specific function. So what we do is to create multiple simulations given the prior/s and the data, and then summarizing those simulations (e.g. obtaining credible intervals at variable probability levels, for example, 95%).
 
-## Let's run an example
+## 02. EXAMPLE CODE
 
 ### Libraries
+
 ```{r, warning=FALSE, message=FALSE, echo=TRUE}
 library(easypackages)
 packages("dplyr", "tidyr", "purrr", "tibble")
@@ -74,6 +80,7 @@ data <- read_excel("data/cropyield.xlsx") %>%
 ```
 
 ### 01. Frequentist with lme
+
 ```{r  warning=F, message=F}
 # Analisis, no intercept (0 + ...)
 yield_lme <- data %>% 
@@ -93,6 +100,7 @@ Anova(corn_lme, type = 3)
 ```
 
 #### Multiple comparison
+
 ```{r  warning=F, message=F}
 # Multiple comparison
 corn_lme_mc<-emmeans(corn_lme, ~ TREAT)
@@ -104,9 +112,10 @@ corn_lme_means <- as.data.frame(
 corn_lme_means
 ```
 
-
 ### 02. Bayesian with brms
+
 #### i. MCMC pars
+
 ```{r  warning=F, message=F}
 # Set up pars
 WU = 1000
@@ -117,6 +126,7 @@ AD = 0.99
 ```
 
 #### ii. Fit
+
 ```{r  warning=F, message=F}
 
 # Analysis
@@ -147,6 +157,7 @@ corn_brms <- data %>%
 ```
 
 #### iii. Check the model
+
 ```{r  warning=F, message=F}
 # Plot
 plot(corn_brms$model[[1]]) 
@@ -158,6 +169,7 @@ pp_check(corn_brms$model[[1]], nsamples = 200)
 ```
 
 #### iv. Model summary
+
 ```{r  warning=F, message=F}
 # Summary
 summary(corn_brms$model[[1]])
@@ -167,6 +179,7 @@ performance::performance(corn_brms$model[[1]])
 ```
 
 #### v. Extract posteriors
+
 ```{r warning=F, message=F}
 
 # Pass model draws to a dataframe
