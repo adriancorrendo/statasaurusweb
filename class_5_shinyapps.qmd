@@ -119,13 +119,9 @@ Let's see this with one example
 
 ### Example with base Shiny
 
+SHINYAPP: <https://ciampittilab.shinyapps.io/soiltestcorr/>
+
 CODE: <https://github.com/adriancorrendo/Shiny_soiltestcorr>
-
-```{r eval = TRUE, echo = FALSE, out.width= "100%"}
-
-knitr::include_url("https://ciampittilab.shinyapps.io/soiltestcorr/")
-
-```
 
 ### (ii) Flexdashboard
 
@@ -158,15 +154,11 @@ Advanced users consider that flexdashboard is limited in comparison to what one 
 
 ### Example with Flexdashboard
 
-Let's see now an example code using Flexdashboard
+Let's see now the metrica app code using Flexdashboard
+
+SHINYAPP: <https://ciampittilab.shinyapps.io/metrica/>
 
 CODE: <https://github.com/adriancorrendo/flexdashboard_metrica>
-
-```{r eval = TRUE, echo = FALSE, out.width= "100%"}
-
-knitr::include_url("https://ciampittilab.shinyapps.io/metrica/")
-
-```
 
 ### (ii) UI Editor
 
