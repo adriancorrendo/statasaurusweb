@@ -7,7 +7,7 @@ format:
     linestretch: 1
 ---
 
-# Introduction to Bayesian Stats
+# Introduction to Bayesian Stats #3
 
 This article is a review and final example to wrap up our brief introduction to Bayesian data analysis.
 
@@ -31,7 +31,6 @@ The structure of the Bayesian theory is similar to the Human Logic process. It i
 
 ### i. The Bayes Theorem
 
-
 $$ P(\theta | x)  = P(\theta) * \frac{P(x|\theta)}{P(x)}$$ where $\theta$ is the parameter of interest, $x$ is the data, and "\|" means "conditional".
 
 $$ Knowledge~after  = Knowledge~before * updating~factor$$ $$ Posterior~distribution  = Prior~distribution * \frac{Likelihood} {Marginal Likelihood} $$
@@ -40,25 +39,33 @@ $$ Knowledge~after  = Knowledge~before * updating~factor$$ $$ Posterior~distribu
 
 You may have heard multiple times about Bayesian Hierarchical Framework or Bayesian Hierarchical Modelling. This simply means that our model is compound by multiple nested levels (hierarchy) where we account for random effects. Actually, they are usually also referred as multi-level models (Hooten & Hefley, 2019). There are two relevant concepts here to derive the posterior distributions:
 
-1.  **Hyper-parameters** are the parameters of the prior distribution. For example, if we have $ Y|\mu \sim N(\mu, \sigma^2)$, with $\mu = \beta_1 *X$ as the "top-level" parameter describing the process model, where $\beta_1$ is the hyper-parameter.
+1.  **Hyper-parameters** are the parameters of the prior distribution. For example, if we have $Y|\mu \sim N(\mu, \sigma^2)$, with $\mu = \beta_1 *X$ as the "top-level" parameter describing the process model, where $\beta_1$ is the hyper-parameter.
 
 2.  **Hyper-priors** are the distributions of the hyper-parameters. For example, $\beta_1 \sim N(\mu_{\beta_1}, \sigma^2_{\beta_1})$ is the hyper-prior of $\beta_1$
 
-Basically, we have a set of layers:
+Basically, we have a set of layers (see Kwag & Hu, 2019):
 
-Layer 1: $$ y_i|\mu_i, \beta_1 \sim P(y_i|\mu_i, \beta_1)$$
+Layer 1: the **data** layer $$ y_i|\mu_i, \beta_1 \sim P(y_i|\mu_i, \beta_1)$$
 
-Layer 2: $$ \mu_i| \beta_1 \sim P(\mu_i|\beta_1)$$
+Layer 2: the **process** layer $$ \mu_i| \beta_1 \sim P(\mu_i|\beta_1)$$
 
-Layer 3: $$ \beta_1 \sim P(\beta_1) = $$
+Layer 3: the **prior** layer $$ \beta_1 \sim P(\beta_1) = $$
 
 $$ \beta_1 \sim N(\mu_{\beta_1}, \sigma^2_{\beta_1})$$
 
 ### Posterior distribution
 
-$P(\theta|x)$ is a probability density function that quantifies the "uncertainty" about $\theta$ within a specific model after the data collection.
+Following the example above, the posterior $P(\mu_i, \beta_1|y_i)$ is a probability density function that quantifies the "uncertainty" about $y_i$ within a specific model after the data collection as follows:
 
-In practice, however, we never know this specific function. So what we do is to create multiple simulations given the prior/s and the data, and then summarizing those simulations (e.g. obtaining credible intervals at variable probability levels, for example, 95%).
+$$ P(\mu_i, \beta_1|y_i)  \propto P(y_i|\mu_i, \beta_1)*P(\mu_i|\beta_1) * P(\beta_1) $$ where $y_i$ represents the data, and $\mu_i$ is the process model dependent on the random variable $\beta_1$.
+
+In practice, however, we never know this specific function. So what we do is to create multiple simulations (the MCMC) given the prior/s and the data, and then summarizing those simulations (e.g. obtaining credible intervals at variable probability levels, for example, 95%).
+
+### References 
+
+Hooten, M.B., and Hefley, T.J., 2019. Chaper 19: Hierarchical Models. Bringing Bayesian Models to Life. <https://doi.org/10.1201/9780429243653>
+
+Kwag, S., Ju, B.S. Application of a Bayesian hierarchical model to system identification of structural parameters. *Engineering with Computers* **36**, 455--474 (2020). <https://doi.org/10.1007/s00366-019-00708-1>
 
 ## 02. EXAMPLE CODE
 
@@ -79,7 +86,7 @@ data <- read_excel("data/cropyield.xlsx") %>%
 
 ```
 
-### 01. Frequentist with lme
+### a. Frequentist with lme
 
 ```{r  warning=F, message=F}
 # Analisis, no intercept (0 + ...)
@@ -112,7 +119,7 @@ corn_lme_means <- as.data.frame(
 corn_lme_means
 ```
 
-### 02. Bayesian with brms
+### b. Bayesian with brms
 
 #### i. MCMC pars
 

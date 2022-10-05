@@ -247,19 +247,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this section</h2>
    
   <ul>
-  <li><a href="#introduction-to-bayesian-stats" id="toc-introduction-to-bayesian-stats" class="nav-link active" data-scroll-target="#introduction-to-bayesian-stats">Introduction to Bayesian Stats</a>
+  <li><a href="#introduction-to-bayesian-stats-3" id="toc-introduction-to-bayesian-stats-3" class="nav-link active" data-scroll-target="#introduction-to-bayesian-stats-3">Introduction to Bayesian Stats #3</a>
   <ul class="collapse">
   <li><a href="#concepts-review" id="toc-concepts-review" class="nav-link" data-scroll-target="#concepts-review">01. CONCEPTS REVIEW</a>
   <ul class="collapse">
   <li><a href="#i.-the-bayes-theorem" id="toc-i.-the-bayes-theorem" class="nav-link" data-scroll-target="#i.-the-bayes-theorem">i. The Bayes Theorem</a></li>
   <li><a href="#ii.-hierarchical-structure" id="toc-ii.-hierarchical-structure" class="nav-link" data-scroll-target="#ii.-hierarchical-structure">ii. Hierarchical structure</a></li>
   <li><a href="#posterior-distribution" id="toc-posterior-distribution" class="nav-link" data-scroll-target="#posterior-distribution">Posterior distribution</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   <li><a href="#example-code" id="toc-example-code" class="nav-link" data-scroll-target="#example-code">02. EXAMPLE CODE</a>
   <ul class="collapse">
   <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
-  <li><a href="#frequentist-with-lme" id="toc-frequentist-with-lme" class="nav-link" data-scroll-target="#frequentist-with-lme">01. Frequentist with lme</a></li>
-  <li><a href="#bayesian-with-brms" id="toc-bayesian-with-brms" class="nav-link" data-scroll-target="#bayesian-with-brms">02. Bayesian with brms</a></li>
+  <li><a href="#a.-frequentist-with-lme" id="toc-a.-frequentist-with-lme" class="nav-link" data-scroll-target="#a.-frequentist-with-lme">a. Frequentist with lme</a></li>
+  <li><a href="#b.-bayesian-with-brms" id="toc-b.-bayesian-with-brms" class="nav-link" data-scroll-target="#b.-bayesian-with-brms">b. Bayesian with brms</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -290,8 +291,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="introduction-to-bayesian-stats" class="level1">
-<h1>Introduction to Bayesian Stats</h1>
+<section id="introduction-to-bayesian-stats-3" class="level1">
+<h1>Introduction to Bayesian Stats #3</h1>
 <p>This article is a review and final example to wrap up our brief introduction to Bayesian data analysis.</p>
 <section id="concepts-review" class="level2">
 <h2 class="anchored" data-anchor-id="concepts-review">01. CONCEPTS REVIEW</h2>
@@ -334,19 +335,25 @@ Note
 <h3 class="anchored" data-anchor-id="ii.-hierarchical-structure">ii. Hierarchical structure</h3>
 <p>You may have heard multiple times about Bayesian Hierarchical Framework or Bayesian Hierarchical Modelling. This simply means that our model is compound by multiple nested levels (hierarchy) where we account for random effects. Actually, they are usually also referred as multi-level models (Hooten &amp; Hefley, 2019). There are two relevant concepts here to derive the posterior distributions:</p>
 <ol type="1">
-<li><p><strong>Hyper-parameters</strong> are the parameters of the prior distribution. For example, if we have $ Y|N(, ^2)$, with <span class="math inline">\(\mu = \beta_1 *X\)</span> as the “top-level” parameter describing the process model, where <span class="math inline">\(\beta_1\)</span> is the hyper-parameter.</p></li>
+<li><p><strong>Hyper-parameters</strong> are the parameters of the prior distribution. For example, if we have <span class="math inline">\(Y|\mu \sim N(\mu, \sigma^2)\)</span>, with <span class="math inline">\(\mu = \beta_1 *X\)</span> as the “top-level” parameter describing the process model, where <span class="math inline">\(\beta_1\)</span> is the hyper-parameter.</p></li>
 <li><p><strong>Hyper-priors</strong> are the distributions of the hyper-parameters. For example, <span class="math inline">\(\beta_1 \sim N(\mu_{\beta_1}, \sigma^2_{\beta_1})\)</span> is the hyper-prior of <span class="math inline">\(\beta_1\)</span></p></li>
 </ol>
-<p>Basically, we have a set of layers:</p>
-<p>Layer 1: <span class="math display">\[ y_i|\mu_i, \beta_1 \sim P(y_i|\mu_i, \beta_1)\]</span></p>
-<p>Layer 2: <span class="math display">\[ \mu_i| \beta_1 \sim P(\mu_i|\beta_1)\]</span></p>
-<p>Layer 3: <span class="math display">\[ \beta_1 \sim P(\beta_1) = \]</span></p>
+<p>Basically, we have a set of layers (see Kwag &amp; Hu, 2019):</p>
+<p>Layer 1: the <strong>data</strong> layer <span class="math display">\[ y_i|\mu_i, \beta_1 \sim P(y_i|\mu_i, \beta_1)\]</span></p>
+<p>Layer 2: the <strong>process</strong> layer <span class="math display">\[ \mu_i| \beta_1 \sim P(\mu_i|\beta_1)\]</span></p>
+<p>Layer 3: the <strong>prior</strong> layer <span class="math display">\[ \beta_1 \sim P(\beta_1) = \]</span></p>
 <p><span class="math display">\[ \beta_1 \sim N(\mu_{\beta_1}, \sigma^2_{\beta_1})\]</span></p>
 </section>
 <section id="posterior-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="posterior-distribution">Posterior distribution</h3>
-<p><span class="math inline">\(P(\theta|x)\)</span> is a probability density function that quantifies the “uncertainty” about <span class="math inline">\(\theta\)</span> within a specific model after the data collection.</p>
-<p>In practice, however, we never know this specific function. So what we do is to create multiple simulations given the prior/s and the data, and then summarizing those simulations (e.g.&nbsp;obtaining credible intervals at variable probability levels, for example, 95%).</p>
+<p>Following the example above, the posterior <span class="math inline">\(P(\mu_i, \beta_1|y_i)\)</span> is a probability density function that quantifies the “uncertainty” about <span class="math inline">\(y_i\)</span> within a specific model after the data collection as follows:</p>
+<p><span class="math display">\[ P(\mu_i, \beta_1|y_i)  \propto P(y_i|\mu_i, \beta_1)*P(\mu_i|\beta_1) * P(\beta_1) \]</span> where <span class="math inline">\(y_i\)</span> represents the data, and <span class="math inline">\(\mu_i\)</span> is the process model dependent on the random variable <span class="math inline">\(\beta_1\)</span>.</p>
+<p>In practice, however, we never know this specific function. So what we do is to create multiple simulations (the MCMC) given the prior/s and the data, and then summarizing those simulations (e.g.&nbsp;obtaining credible intervals at variable probability levels, for example, 95%).</p>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<p>Hooten, M.B., and Hefley, T.J., 2019. Chaper 19: Hierarchical Models. Bringing Bayesian Models to Life. <a href="https://doi.org/10.1201/9780429243653" class="uri">https://doi.org/10.1201/9780429243653</a></p>
+<p>Kwag, S., Ju, B.S. Application of a Bayesian hierarchical model to system identification of structural parameters. <em>Engineering with Computers</em> <strong>36</strong>, 455–474 (2020). <a href="https://doi.org/10.1007/s00366-019-00708-1" class="uri">https://doi.org/10.1007/s00366-019-00708-1</a></p>
 </section>
 </section>
 <section id="example-code" class="level2">
@@ -367,8 +374,8 @@ Note
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">BLOCK =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>), <span class="fu">nrow</span>(.)<span class="sc">/</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="frequentist-with-lme" class="level3">
-<h3 class="anchored" data-anchor-id="frequentist-with-lme">01. Frequentist with lme</h3>
+<section id="a.-frequentist-with-lme" class="level3">
+<h3 class="anchored" data-anchor-id="a.-frequentist-with-lme">a. Frequentist with lme</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analisis, no intercept (0 + ...)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>yield_lme <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
@@ -433,8 +440,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </section>
 </section>
-<section id="bayesian-with-brms" class="level3">
-<h3 class="anchored" data-anchor-id="bayesian-with-brms">02. Bayesian with brms</h3>
+<section id="b.-bayesian-with-brms" class="level3">
+<h3 class="anchored" data-anchor-id="b.-bayesian-with-brms">b. Bayesian with brms</h3>
 <section id="i.-mcmc-pars" class="level4">
 <h4 class="anchored" data-anchor-id="i.-mcmc-pars">i. MCMC pars</h4>
 <div class="cell">
@@ -536,7 +543,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 
 ELPD    | ELPD_SE |   LOOIC | LOOIC_SE |    WAIC |    R2 | R2 (marg.) | R2 (adj.) | R2_adjusted_marginal |   RMSE
 -----------------------------------------------------------------------------------------------------------------
--90.633 |   2.558 | 181.265 |    5.115 | 179.679 | 0.839 |      0.824 |     0.740 |               -0.329 | 13.943</code></pre>
+-90.633 |   2.558 | 181.265 |    5.115 | 179.679 | 0.839 |      0.824 |     0.742 |               -0.330 | 13.943</code></pre>
 </div>
 </div>
 </section>
