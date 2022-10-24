@@ -51,6 +51,8 @@ website:
             text: "4_bayes_3"
           - href: class_5_shinyapps.qmd
             text: "5_shinyapps"
+          - href: class_7_meta_analaysis.qmd
+            text: "7_metaanalysis"
       - section: "Resources"
         contents:
           - href: resources.qmd
