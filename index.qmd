@@ -2,7 +2,7 @@
 title: "Statasaurus' Homepage"
 format:
   html:
-    fontsize: 1.2em
+    fontsize: 1.25em
 ---
 
 Welcome to the 🍂 Fall 2022 Season 🍂 of Statasaurus!

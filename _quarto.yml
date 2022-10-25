@@ -31,33 +31,29 @@ website:
     search: true
     collapse-level: 1
     contents:
-      - section: "Details"
+      - section: "About"
         contents: 
           - href: index.qmd
-            text: "Overview"
+            text: "Description"
           - href: schedule.qmd
             text: "Schedule"
           - href: members.qmd
             text: "Members"
-      - section: "Code"
+      - section: "Encounters"
         contents:
-          - href: code_1_intro.qmd
+          - href: e1_intro.qmd
             text: "1_intro"
-          - href: code_2_bayes_1.qmd
+          - href: e2_bayes_1.qmd
             text: "2_bayes_1"
-          - href: code_3_bayes_2.qmd
+          - href: e3_bayes_2.qmd
             text: "3_bayes_2"
-          - href: code_4_bayes_3.qmd
+          - href: e4_bayes_3.qmd
             text: "4_bayes_3"
-          - href: class_5_shinyapps.qmd
+          - href: e5_shinyapps.qmd
             text: "5_shinyapps"
-          - href: class_7_meta_analaysis.qmd
-            text: "7_metaanalysis"
-      - section: "Resources"
-        contents:
-          - href: resources.qmd
-            text: "Resources"
-   
+          - href: e7_meta_analaysis.qmd
+            text: "7_meta_analysis"
+      
     
 format:
   html:
@@ -68,6 +64,7 @@ format:
     toc-location: right
     code-copy: true
     code-overflow: scroll
+    highlight-style: pygments
     
 freeze: auto
 
