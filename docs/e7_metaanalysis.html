@@ -85,6 +85,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./e5_shinyapps.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -173,12 +174,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Encounters</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Encounters</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./e1_intro.html" class="sidebar-item-text sidebar-link">1_intro</a>
@@ -206,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./e7_metaanalaysis.qmd" class="sidebar-item-text sidebar-link">7_meta_analysis</a>
+  <a href="./e7_metaanalysis.html" class="sidebar-item-text sidebar-link active">7_meta_analysis</a>
   </div>
 </li>
       </ul>
@@ -448,20 +449,20 @@ NOTE: In the following pairs of variables, the missingness pattern of the second
 Random-Effects Model (k = 1311; tau^2 estimator: REML)
 
     logLik    deviance         AIC         BIC        AICc   
- 1059.8034  -2119.6067  -2115.6067  -2105.2511  -2115.5975   
+ 1054.4785  -2108.9571  -2104.9571  -2094.6015  -2104.9479   
 
 tau^2 (estimated amount of total heterogeneity): 0.0083 (SE = 0.0004)
-tau (square root of estimated tau^2 value):      0.0911
-I^2 (total heterogeneity / total variability):   92.28%
-H^2 (total variability / sampling variability):  12.96
+tau (square root of estimated tau^2 value):      0.0913
+I^2 (total heterogeneity / total variability):   92.40%
+H^2 (total variability / sampling variability):  13.16
 
 Test for Heterogeneity:
-Q(df = 1310) = 14433.9899, p-val &lt; .0001
+Q(df = 1310) = 14454.8167, p-val &lt; .0001
 
 Model Results:
 
 estimate      se    zval    pval   ci.lb   ci.ub      
-  0.0203  0.0044  4.6394  &lt;.0001  0.0117  0.0289  *** 
+  0.0249  0.0046  5.3755  &lt;.0001  0.0158  0.0339  *** 
 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
@@ -470,12 +471,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <span class="fu">trans</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code> intrcpt 
-2.049805 </code></pre>
+2.517654 </code></pre>
 </div>
 <details><summary>Show code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># I squared statistic</span>
 <span class="va">mod</span><span class="op">$</span><span class="va">I2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
-<pre><code>[1] 92.28377</code></pre>
+<pre><code>[1] 92.39838</code></pre>
 </div>
 </div>
 </section><section id="influential-studies-diagnosis" class="level3"><h3 class="anchored" data-anchor-id="influential-studies-diagnosis">4. Influential Studies Diagnosis</h3>
@@ -686,7 +687,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="./e5_shinyapps.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">5_shinyapps</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb22" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Week #8 | Systematic reviews procedures in R"</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "A compilation of methods and funtions for meta-analytic data in R"</span></span>
