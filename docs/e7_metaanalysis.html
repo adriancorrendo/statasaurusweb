@@ -206,7 +206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./e7_meta_analaysis.qmd" class="sidebar-item-text sidebar-link">7_meta_analysis</a>
+  <a href="./e7_metaanalaysis.qmd" class="sidebar-item-text sidebar-link">7_meta_analysis</a>
   </div>
 </li>
       </ul>
@@ -448,20 +448,20 @@ NOTE: In the following pairs of variables, the missingness pattern of the second
 Random-Effects Model (k = 1311; tau^2 estimator: REML)
 
     logLik    deviance         AIC         BIC        AICc   
- 1058.0574  -2116.1148  -2112.1148  -2101.7592  -2112.1056   
+ 1059.8034  -2119.6067  -2115.6067  -2105.2511  -2115.5975   
 
-tau^2 (estimated amount of total heterogeneity): 0.0081 (SE = 0.0004)
-tau (square root of estimated tau^2 value):      0.0898
-I^2 (total heterogeneity / total variability):   91.56%
-H^2 (total variability / sampling variability):  11.85
+tau^2 (estimated amount of total heterogeneity): 0.0083 (SE = 0.0004)
+tau (square root of estimated tau^2 value):      0.0911
+I^2 (total heterogeneity / total variability):   92.28%
+H^2 (total variability / sampling variability):  12.96
 
 Test for Heterogeneity:
-Q(df = 1310) = 13245.6804, p-val &lt; .0001
+Q(df = 1310) = 14433.9899, p-val &lt; .0001
 
 Model Results:
 
 estimate      se    zval    pval   ci.lb   ci.ub      
-  0.0228  0.0046  4.9677  &lt;.0001  0.0138  0.0318  *** 
+  0.0203  0.0044  4.6394  &lt;.0001  0.0117  0.0289  *** 
 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
@@ -470,12 +470,12 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <span class="fu">trans</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">mod</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
 <pre><code> intrcpt 
-2.303479 </code></pre>
+2.049805 </code></pre>
 </div>
 <details><summary>Show code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># I squared statistic</span>
 <span class="va">mod</span><span class="op">$</span><span class="va">I2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output cell-output-stdout">
-<pre><code>[1] 91.56415</code></pre>
+<pre><code>[1] 92.28377</code></pre>
 </div>
 </div>
 </section><section id="influential-studies-diagnosis" class="level3"><h3 class="anchored" data-anchor-id="influential-studies-diagnosis">4. Influential Studies Diagnosis</h3>

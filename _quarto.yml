@@ -51,7 +51,7 @@ website:
             text: "4_bayes_3"
           - href: e5_shinyapps.qmd
             text: "5_shinyapps"
-          - href: e7_meta_analaysis.qmd
+          - href: e7_metaanalaysis.qmd
             text: "7_meta_analysis"
       
     
