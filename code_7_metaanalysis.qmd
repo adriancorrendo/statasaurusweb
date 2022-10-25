@@ -1,5 +1,5 @@
 ---
-title: "Systematic reviews procedures in R"
+title: "Week #8 | Systematic reviews procedures in R"
 subtitle: "A compilation of methods and funtions for meta-analytic data in R"
 author: "Nicolas Giordano"
 date: 10-24-2022
@@ -23,8 +23,6 @@ smooth-scroll: true
 ---
 
 ## Data Collection
-
-
 
 ### SCOPUS QUERYS
 
@@ -61,7 +59,7 @@ packages("bayestestR")
 packages("mi")
 packages("metafor")
 packages("multidplyr")
-source("functions_sys_reviews.R")
+source("assets/class07/functions_sys_reviews.R")
 `%nin%` <- Negate(`%in%`)
 ```
 
@@ -76,7 +74,7 @@ SOURCE-ID (78796 OR 59988 OR 38753 OR 15639) AND
 PUBYEAR \> 1980
 
 ```{r search 1, warning=FALSE}
-path = "articles/articles already searched/"
+path = "assets/class07/articles/articles already searched/"
 
 files <- list.files(path = path, pattern = "*.ris")
 
@@ -95,7 +93,7 @@ SOURCE-ID (78796 OR 59988 OR 38753 OR 15639) AND
 PUBYEAR \> 1980
 
 ```{r search 2, warning=FALSE}
-path2 = "articles/new search/"
+path2 = "assets/class07/articles/new search/"
 
 files2 <- list.files(path = path2, pattern = "*.ris")
 
@@ -109,7 +107,7 @@ second_search = load_bibliography(path = path2, files = files2)
 ```{r anti_join}
 df_final = anti_join(second_search, first_search)
 
-write.csv(x = df_final, file = "articles_search_final.csv")
+write.csv(x = df_final, file = "assets/class07/articles/articles_search_final.csv")
 
 ```
 
@@ -146,7 +144,7 @@ The article can be find here [Hu et al 2021](https://www.sciencedirect.com/scien
 ### Load data and wrangling
 
 ```{r data}
-data = read_excel("example_data.xlsx", skip = 2) %>% 
+data = read_excel("assets/class07/example_data.xlsx", skip = 2) %>% 
   janitor::clean_names()
 ```
 
@@ -229,7 +227,7 @@ data.imp_es_ic =
 
 ```
 
-### 5. Run unbootstrapped model
+### 5. Run non-bootstrapped model
 
 Weight of influential studies is set to zero
 
@@ -249,19 +247,19 @@ Citation: [Adams et al 1997](https://www.scopus.com/record/display.uri?eid=2-s2.
 #### 6.1) Pooled effects, intercept only model
 
 ```{r bootstrap}
-bootstrap_rma(data = data.imp_es_ic, response_variable = "RR",moderator = NA, boot_num = 16, cores = 16)
+#bootstrap_rma(data = data.imp_es_ic, response_variable = "RR",moderator = NA, boot_num = 16, cores = 16)
 ```
 
 #### 6.2) Test potential moderators
 
 ```{r moderators}
-bootstrap_rma(data = data.imp_es_ic, response_variable = "RR",moderator = "TEXTURE", boot_num = 16, cores = 16)
+#bootstrap_rma(data = data.imp_es_ic, response_variable = "RR",moderator = "TEXTURE", boot_num = 16, cores = 16)
 ```
 
 #### 6.3) Summarize bootstraps
 
 ```{r summarise_boot}
-df.plot = summarise_bootstraps(readRDS("output/RR_TEXTURE_mod.RData"))
+df.plot = summarise_bootstraps(readRDS("assets/class07/output/RR_TEXTURE_mod.RData"))
 ```
 
 #### 6.4) Plot
